@@ -1,0 +1,486 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>使用GitHub和Hexo搭建Blog | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="使用GitHub和Hexo来搭建免费的Blog">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="使用GitHub和Hexo搭建Blog"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+      <li><a href="/tools">工具</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-06-24T08:07:06.000Z"><a href="/2015/06/24/使用GitHub和Hexo搭建Blog/">2015-06-24</a></time>
+      
+      
+  
+    <h1 class="title">使用GitHub和Hexo搭建Blog</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#hexo安装"><span class="toc-number">1.</span> <span class="toc-text">hexo安装</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#node-js下载安装"><span class="toc-number">1.1.</span> <span class="toc-text">node-js下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#git下载安装"><span class="toc-number">1.2.</span> <span class="toc-text">git下载安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安装HEXO"><span class="toc-number">1.3.</span> <span class="toc-text">安装HEXO</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#本地查看"><span class="toc-number">1.4.</span> <span class="toc-text">本地查看</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#部署到Github"><span class="toc-number">2.</span> <span class="toc-text">部署到Github</span></a></li></ol>
+		</div>
+	
+
+        <hr>
+<p><strong> 通过Hexo和github来搭建自己的免费博客，安装Hexo你需要git和node-js，如果没有安装下面的方式来安装 </strong><br><a id="more"></a></p>
+<h1 id="hexo安装"><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">hexo安装</a></h1><h2 id="node-js下载安装"><a href="https://nodejs.org" target="_blank" rel="external">node-js</a>下载安装</h2><p>使用nvm安装<br>cURL:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>Wget:</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ wget -qO- https://raw.github.com/creationix/nvm/master/install.sh | sh</span><br></pre></td></tr></table></figure>
+<p>nvm安装完成后，重启终端安装Node.js</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ nvm install 0.12</span><br></pre></td></tr></table></figure>
+<p>你也可以去<a href="https://nodejs.org" target="_blank" rel="external">官网</a>下载安装器来安装</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v&#10;v0.12.5</span><br></pre></td></tr></table></figure>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm -v&#10;2.11.2</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="git下载安装">git下载安装</h2><blockquote>
+<p>Install Git<br>Windows: Download &amp; install git.<br>Mac: Install it with Homebrew, MacPorts or installer.<br>Linux (Ubuntu, Debian): sudo apt-get install git-core<br>Linux (Fedora, Red Hat, CentOS): sudo yum install git-core</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git version&#10;git version 2.1.0</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="安装HEXO">安装<a href="https://hexo.io" target="_blank" rel="external">HEXO</a></h2><p>什么是hexo?</p>
+<blockquote>
+<p>A fast, simple &amp; powerful blog framework</p>
+</blockquote>
+<p>开始安装</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g&#10;npm ERR! tar.unpack untar error /Users/yangyong/.npm/hexo-cli/0.1.7/package.tgz&#10;npm ERR! Darwin 13.4.0&#10;npm ERR! argv &#34;node&#34; &#34;/usr/local/bin/npm&#34; &#34;install&#34; &#34;hexo-cli&#34; &#34;-g&#34;&#10;npm ERR! node v0.12.5&#10;npm ERR! npm  v2.11.2&#10;npm ERR! path /usr/local/lib/node_modules/hexo-cli&#10;npm ERR! code EACCES&#10;npm ERR! errno -13&#10;&#10;npm ERR! Error: EACCES, mkdir &#39;/usr/local/lib/node_modules/hexo-cli&#39;&#10;npm ERR!     at Error (native)&#10;npm ERR!  &#123; [Error: EACCES, mkdir &#39;/usr/local/lib/node_modules/hexo-cli&#39;]&#10;npm ERR!   errno: -13,&#10;npm ERR!   code: &#39;EACCES&#39;,&#10;npm ERR!   path: &#39;/usr/local/lib/node_modules/hexo-cli&#39;,&#10;npm ERR!   fstream_type: &#39;Directory&#39;,&#10;npm ERR!   fstream_path: &#39;/usr/local/lib/node_modules/hexo-cli&#39;,&#10;npm ERR!   fstream_class: &#39;DirWriter&#39;,&#10;npm ERR!   fstream_stack:&#10;npm ERR!    [ &#39;/usr/local/lib/node_modules/npm/node_modules/fstream/lib/dir-writer.js:35:25&#39;,&#10;npm ERR!      &#39;/usr/local/lib/node_modules/npm/node_modules/mkdirp/index.js:47:53&#39;,&#10;npm ERR!      &#39;FSReqWrap.oncomplete (fs.js:95:15)&#39; ] &#125;&#10;npm ERR!&#10;npm ERR! Please try running this command again as root/Administrator.&#10;&#10;npm ERR! Please include the following file with any support request:&#10;npm ERR!     /Users/yangyong/npm-debug.log</span><br></pre></td></tr></table></figure>
+<p>出错了，因为在/usr/local下没有权限写文件，改下权限</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod -R a+w /usr/local</span><br></pre></td></tr></table></figure>
+<p>再次安装hexo</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-cli -g&#10;&#10;&#62; fsevents@0.3.6 install /usr/local/lib/node_modules/hexo-cli/node_modules/hexo-fs/node_modules/chokidar/node_modules/fsevents&#10;&#62; node-gyp rebuild&#10;&#10;xcode-select: error: tool &#39;xcodebuild&#39; requires Xcode, but active developer directory &#39;/Library/Developer/CommandLineTools&#39; is a command line tools instance&#10;&#10;xcode-select: error: tool &#39;xcodebuild&#39; requires Xcode, but active developer directory &#39;/Library/Developer/CommandLineTools&#39; is a command line tools instance&#10;&#10;  SOLINK_MODULE(target) Release/.node&#10;  CXX(target) Release/obj.target/fse/fsevents.o&#10;  SOLINK_MODULE(target) Release/fse.node&#10;/usr/local/bin/hexo -&#62; /usr/local/lib/node_modules/hexo-cli/bin/hexo&#10;hexo-cli@0.1.7 /usr/local/lib/node_modules/hexo-cli&#10;&#9500;&#9472;&#9472; abbrev@1.0.7&#10;&#9500;&#9472;&#9472; minimist@1.1.1&#10;&#9500;&#9472;&#9472; bluebird@2.9.30&#10;&#9500;&#9472;&#9472; tildify@1.1.0 (os-homedir@1.0.0)&#10;&#9500;&#9472;&#9472; chalk@1.0.0 (escape-string-regexp@1.0.3, ansi-styles@2.0.1, supports-color@1.3.1, strip-ansi@2.0.1, has-ansi@1.0.3)&#10;&#9492;&#9472;&#9472; hexo-fs@0.1.3 (escape-string-regexp@1.0.3, graceful-fs@3.0.8, chokidar@0.12.6)</span><br></pre></td></tr></table></figure>
+<p>提示缺少命令行开发者工具</p>
+<p>需要安装Xcode</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --install</span><br></pre></td></tr></table></figure>
+<p>选择安装xcode</p>
+<p>安装完成后执行</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ xcode-select --print-path&#10;/Applications/Xcode.app/Contents/Developer</span><br></pre></td></tr></table></figure>
+<p>再次安装hexo，成功.</p>
+<p>至于如何建站配置等请参考<a href="https://hexo.io/zh-cn/docs/setup.html" target="_blank" rel="external">官方文档</a></p>
+<p>新建hexo目录并进入目录<br>初始化hexo</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init&#10;INFO  Copying data to /usr/local/Cellar/hexo&#10;INFO  You are almost done! Don&#39;t forget to run &#39;npm install&#39; before you start blogging with Hexo!</span><br></pre></td></tr></table></figure>
+<p>安装hexo依赖包</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+<p>查看hexo版本</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v&#10;hexo: 3.1.1&#10;os: Darwin 14.3.0 darwin x64&#10;http_parser: 2.3&#10;node: 0.12.5&#10;v8: 3.28.71.19&#10;uv: 1.6.1&#10;zlib: 1.2.8&#10;modules: 14&#10;openssl: 1.0.1o</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="本地查看">本地查看</h2><p>生成静态文件</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>启动服务器</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server&#10;INFO  Hexo is running at http://0.0.0.0:4000/. Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+<p>查看效果</p>
+<localhost:4000>
+
+<p>至此，本地博客已经安装完成</p>
+<hr>
+<h1 id="部署到Github">部署到Github</h1><p>注册/登录账户，创建repository，名称为{yourUserName}.github.io</p>
+<p>修改_config.yml</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## <span class="string">Docs:</span> <span class="string">http:</span><span class="comment">//hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="string">deploy:</span></span><br><span class="line"><span class="label">  type:</span> git</span><br><span class="line"><span class="label">  repo:</span> <span class="string">https:</span><span class="comment">//github.com/sdyy321/sdyy321.github.io.git</span></span><br><span class="line"><span class="label">  branch:</span> master</span><br></pre></td></tr></table></figure>
+<p>保存配置并部署</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate&#10;$ hexo deploy&#10;ERROR Deployer not found: git</span><br></pre></td></tr></table></figure>
+<p>报错，提示需要安装 hexo-deployer-git。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p>再执行hexo deploy</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">To https://github.com/sdyy321/sdyy321.github.io.git&#10; + a475f94...5dacc14 master -&#62; master (forced update)&#10;Branch master set up to track remote branch master from https://github.com/sdyy321/sdyy321.github.io.git.&#10;INFO  Deploy done: git</span><br></pre></td></tr></table></figure>
+<p>提示部署成功，现在赶紧去访问你的主页吧&lt;{yourUserName}.github.io/&gt;</p>
+<hr>
+<p>最后特别感谢<a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">Zippera’s blog</a>,参考了该博主的文章制作了自己的免费博客，使用的主题也是这位博主的，thx!</p>
+</localhost:4000>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/hexo/">hexo</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/hexo/">hexo</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/06/25/如何为你的博客文章添加目录/" class="alignleft prev" >上一页</a>
+    
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+  </ul>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li>神在在</li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+
+  <iframe width="100%" height="550" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?language=&width=0&height=550&fansRow=2&ptype=1&speed=0&skin=1&isTitle=1&noborder=1&isWeibo=1&isFans=0&uid=1654802494&verifier=0c2cdcf8&dpc=1"></iframe>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><section>
+Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">zippera</a> 
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->
