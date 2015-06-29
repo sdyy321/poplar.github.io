@@ -233,7 +233,7 @@
 	
 		<div id="toc" class="toc-article">
 		<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新建文章时默认生成自定义配置项"><span class="toc-number">1.</span> <span class="toc-text">新建文章时默认生成自定义配置项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页文章显示摘要"><span class="toc-number">2.</span> <span class="toc-text">主页文章显示摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导航栏添加自定义导航"><span class="toc-number">3.</span> <span class="toc-text">导航栏添加自定义导航</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加多说评论"><span class="toc-number">4.</span> <span class="toc-text">添加多说评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#加入「fork_me_on_github」"><span class="toc-number">5.</span> <span class="toc-text">加入「fork me on github」</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加音乐"><span class="toc-number">6.</span> <span class="toc-text">添加音乐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#制作自己的播放列表"><span class="toc-number">7.</span> <span class="toc-text">制作自己的播放列表</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#新建文章时默认生成自定义配置项"><span class="toc-number">1.</span> <span class="toc-text">新建文章时默认生成自定义配置项</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#主页文章显示摘要"><span class="toc-number">2.</span> <span class="toc-text">主页文章显示摘要</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#导航栏添加自定义导航"><span class="toc-number">3.</span> <span class="toc-text">导航栏添加自定义导航</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加多说评论"><span class="toc-number">4.</span> <span class="toc-text">添加多说评论</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#加入「fork_me_on_github」"><span class="toc-number">5.</span> <span class="toc-text">加入「fork me on github」</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加音乐"><span class="toc-number">6.</span> <span class="toc-text">添加音乐</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#制作自己的播放列表"><span class="toc-number">7.</span> <span class="toc-text">制作自己的播放列表</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为你的博客添加访问统计"><span class="toc-number">8.</span> <span class="toc-text">为你的博客添加访问统计</span></a></li></ol>
 		</div>
 	
 
@@ -278,7 +278,12 @@
 <embed src="http://www.xiami.com/widget/6806640_1770505314,_235_346_cccccc_dddddd_1/multiPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="opaque">
 
 <p>官方给出了一个<a href="http://www.xiami.com/g/thread-274709?spm=0.0.0.0.JET1TP" target="_blank" rel="external">教程</a>，大家可以参考</p>
-<p>最后特别感谢<a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">Zippera’s blog</a></p>
+<p>不过由于hexo生成的是静态页面，所以不太合适做背景音乐，大家自己抉择。</p>
+<hr>
+<h1 id="为你的博客添加访问统计">为你的博客添加访问统计</h1><p>使用<a href="http://ibruce.info/2015/04/04/busuanzi/" target="_blank" rel="external">不如的不蒜子</a><br>比如编辑hexo/themes/lightum/layout/_partial/footer.ejs，添加下面代码</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">script</span> <span class="attribute">async</span> <span class="attribute">src</span>=<span class="value">"https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"</span>&gt;</span><span class="undefined"></span><br><span class="line"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">section</span>&gt;</span></span><br><span class="line">本站总访问量<span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"busuanzi_value_site_pv"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>次，本站访客数<span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"busuanzi_value_site_uv"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>人次，本文总阅读量<span class="tag">&lt;<span class="title">span</span> <span class="attribute">id</span>=<span class="value">"busuanzi_value_page_pv"</span>&gt;</span><span class="tag">&lt;/<span class="title">span</span>&gt;</span>次</span><br><span class="line"><span class="tag">&lt;/<span class="title">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<p>最后特别感谢<a href="http://zipperary.com/categories/hexo/" target="_blank" rel="external">Zippera’s blog</a>和<a href="http://ibruce.info/" target="_blank" rel="external">不如</a></p>
 
       
     </div>
@@ -370,6 +375,15 @@ var duoshuoQuery = {short_name:"sdyy321"};
 </div>
 
 
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/hexo/" style="font-size: 10px;">hexo</a>
+  </div>
+</div>
+
+
   <div class="widget tag">
 <h3 class="title">简介</h3>
 <ul class="entry">
@@ -397,13 +411,15 @@ var duoshuoQuery = {short_name:"sdyy321"};
 
 
 
-  <embed src="http://www.xiami.com/widget/6806640_1770505314,_235_346_cccccc_dddddd_1/multiPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="opaque"></embed>
+  <embed src="http://www.xiami.com/widget/6806640_103326765_235_346_cccccc_dddddd_1/collectPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="opaque"></embed>
 
 </aside>
     <div class="clearfix"></div>
   </div>
-  <footer id="footer" class="inner"><section>
-Theme of <a href="https://github.com/zippera/lightum">Lightum</a>, Improved from <a href="https://github.com/hexojs/hexo-theme-light">Light</a>, by <a href="/">zippera</a> 
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
 </section>
 <div class="clearfix"></div>
 </footer>
