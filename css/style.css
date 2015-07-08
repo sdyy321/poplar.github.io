@@ -794,8 +794,15 @@ figure.highlight pre {
   margin: 0;
 }
 figure.highlight table {
-  margin-top: 0;
-  border-spacing: 0;
+  margin-top: 1;
+  border-spacing: 1;
+  border: 0px;
+}
+figure.highlight table th {
+  border: 0px solid #000;
+}
+figure.highlight table td {
+  border: 0px solid #000;
 }
 figure.highlight .gutter {
   color: #777;
@@ -875,4 +882,21 @@ pre .clojure .title {
 }
 pre .deletion {
   color: #dc322f;
+}
+.entry table {
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+.entry table th,
+.entry table td {
+  padding: 5px 15px;
+  margin: 0 0 0 0;
+  border-collapse: collapse;
+  border: 1px solid #ddd;
+}
+.entry table thead {
+  border-bottom: 2px solid #ddd;
+}
+.entry table tr:nth-child(even) {
+  background: #eee;
 }
