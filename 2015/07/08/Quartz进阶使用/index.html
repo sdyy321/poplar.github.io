@@ -1,0 +1,563 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Quartz进阶使用 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="Quartz进阶使用">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="Quartz进阶使用"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-08T10:12:19.000Z"><a href="/2015/07/08/Quartz进阶使用/">2015-07-08</a></time>
+      
+      
+  
+    <h1 class="title">Quartz进阶使用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#监听你的作业调度"><span class="toc-number">1.</span> <span class="toc-text">监听你的作业调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#线程模型"><span class="toc-number">2.</span> <span class="toc-text">线程模型</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#作业仓库"><span class="toc-number">3.</span> <span class="toc-text">作业仓库</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#集群实现"><span class="toc-number">4.</span> <span class="toc-text">集群实现</span></a></li></ol>
+		</div>
+	
+
+        <p>Quartz初级使用请点击<a href="http://sdyy321.github.io/2015/07/01/Quartz%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">这里</a></p>
+<p>基本了解了Quartz使用方式后我们下面讲讲Quartz scheduler更高一级的使用<br><a id="more"></a></p>
+<hr>
+<h1 id="监听你的作业调度">监听你的作业调度</h1><p>除了作业的正常执行，我们可能需要对作业做额外的操作，但又不想写在Job中，让Job保持功能单一，有点类似AOP或者HOOK操作，比如我们在执行完一个任务后需要添加相应统计，包括这个任务被调用了多少次，持续了多久等等。如果你想这么做的话，那就需要用到Quartz的监听器了。</p>
+<p>Quartz为我们提供了3种监听器，分别用来监听作业事件和触发器事件和调度器事件。</p>
+<p>JobListner监听事件：作业即将执行通知、作业执行完毕通知、作业被拒绝执行的通知<br>TriggerListener监听事件：触发器的触发、拒绝触发、错过触发、完成的通知</p>
+<ul>
+<li><p>监听作业事件</p>
+<p>  首先你需要实现JobListner接口，我们这里直接继承JobListenerSupport，这样就可以只想监听我们需要的某个事件了</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyJobListener</span> <span class="keyword">extends</span> <span class="title">JobListenerSupport</span> </span>&#123;</span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"myJobListener"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jobToBeExecuted</span><span class="params">(JobExecutionContext context)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"将要执行"</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jobWasExecuted</span><span class="params">(JobExecutionContext context, JobExecutionException jobException)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"执行完毕"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  实现我们自己的JobListener必须要指定一个名称，即getName()是必须要实现的，然后重载你想要监听的事件即可。接下来给调度器注册监听器就行了。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addJobListener(<span class="keyword">new</span> MyJobListener(), KeyMatcher.keyEquals(<span class="keyword">new</span> JobKey(<span class="string">"myJob"</span>,<span class="string">"group1"</span>)));</span><br></pre></td></tr></table></figure>
+<p>  这样就可以给我们指定的作业添加监听器了。再如：</p>
+<p>  给指定group下的所有JOB添加监听器：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addJobListener(<span class="keyword">new</span> MyJobListener(), GroupMatcher.jobGroupEquals(<span class="string">"group1"</span>));</span><br></pre></td></tr></table></figure>
+<p>  给2个指定group下的所有JOB添加监听器：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addJobListener(<span class="keyword">new</span> MyJobListener(), OrMatcher.or(GroupMatcher.jobGroupEquals(<span class="string">"group1"</span>),GroupMatcher.jobGroupEquals(<span class="string">"group2"</span>)));</span><br></pre></td></tr></table></figure>
+<p>  给所有JOB添加监听器：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addJobListener(<span class="keyword">new</span> MyJobListener(), EverythingMatcher.allJobs());</span><br></pre></td></tr></table></figure>
+<p>  Quartz为我们提供了不同的适配器，我们可以选择相应的Matcher来匹配作业，这里就不多说了。</p>
+<p>  <strong><em>注意事项：listener是注册到scheduler的ListenerManager上的，与listener一同注册的还有一个Matcher对象，该对象用于描述listener期望接收事件的job。</em></strong></p>
+</li>
+<li><p>监听触发器事件</p>
+<p>  和监听作业事件相同，你需要实现TriggerListener接口，我们直接继承TriggerListenerSupport</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MyTriggerListener</span> <span class="keyword">extends</span> <span class="title">TriggerListenerSupport</span> </span>&#123;</span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> String <span class="title">getName</span><span class="params">()</span> </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"MyTriggerListener"</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">triggerComplete</span><span class="params">(Trigger trigger, JobExecutionContext context, Trigger.CompletedExecutionInstruction triggerInstructionCode)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"触发完毕"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  然后再注册到调度器上</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addTriggerListener(<span class="keyword">new</span> MyTriggerListener(),EverythingMatcher.allTriggers());</span><br></pre></td></tr></table></figure>
+<p>  基本跟JobListener没什么区别，只是监听的事件类型不同罢了</p>
+</li>
+<li><p>监听调度器事件</p>
+<p>  和TriggerListener和JobListener类似，但它仅接受来自调度器自身的消息，我们需要实现SchedulerListener接口，这里我们直接继承SchedulerListenerSupport</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">MySchedulerListener</span> <span class="keyword">extends</span> <span class="title">SchedulerListenerSupport</span> </span>&#123;</span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">jobAdded</span><span class="params">(JobDetail jobDetail)</span> </span>&#123;</span><br><span class="line">    System.out.println(<span class="string">"添加JOB"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  我们只简单监听一个事件即jobAdded的事件，其他事件可按需求自行重载对应方法即可。然后将这个监听器注册到调度器上</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().addSchedulerListener(<span class="keyword">new</span> MySchedulerListener());</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>移除监听器</p>
+<p>  上面三种监听器都可以在调度器上实现移除操作，作业和触发器的移除可以根据名称来移除，这就是为什么我们在实现监听器的时候必须要实现它的getName()方法的原因了。</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scheduler.getListenerManager().removeJobListener(<span class="string">"myJobListener"</span>);</span><br><span class="line">   scheduler.getListenerManager().removeTriggerListener(<span class="string">"myTriggerListener"</span>);</span><br><span class="line">   scheduler.getListenerManager().removeSchedulerListener(mySchedulerListener);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h1 id="线程模型">线程模型</h1><p>quartz中存在2种线程，一种是主线程QuartzSchedulerThead即调度线程，它在QuartzScheduler被创建时便会生成一个实例，负责处理各个作业的调度。另一种是任务执行线程，用来处理用户具体的作业，这些执行作业的线程都是交给线程池ThreadPool来管理的，一般的设置使用SimpleThreadPool，它会创建一定数量的WorkerThread实例放入池中使得作业能够在线程中处理，WorkerThread是定义在SimpleThreadPool类中的内部类，它实质就是一个线程。ThreadPool作为任务运行的基础设施，所有作业都可以通过共享线程池中的线程来避免线程新建关闭的开销，提高运行效率。</p>
+<p>Quartz默认为我们配置了线程相关参数，你可以在<code>org.quartz</code>的package下看到quartz.properties，这是默认的配置文件，打开文件你可以看到下面的配置：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">#作业执行线程池类型</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.threadPool</span><span class="class">.class</span>: org<span class="class">.quartz</span><span class="class">.simpl</span><span class="class">.SimpleThreadPool</span></span><br><span class="line">#线程池大小，当作业数目很大时，可以适当调整大小来获得更好的性能，建议在<span class="number">1</span>-<span class="number">100</span>范围内</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.threadPool</span><span class="class">.threadCount</span>: <span class="number">10</span></span><br><span class="line">#线程优先级，默认是<span class="number">5</span>普通级别</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.threadPool</span><span class="class">.threadPriority</span>: <span class="number">5</span></span><br><span class="line">#自创建父线程，是否继承初始化线程的类加载器，设为true可以有助类加载、JNDI查找和其他在应用服务器中使用Quartz问题</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.threadPool</span><span class="class">.threadsInheritContextClassLoaderOfInitializingThread</span>: true</span><br></pre></td></tr></table></figure>
+<p>上面说过所有作业可以共享同一个线程池来提高效率，但如果当你资源消耗的速度大于资源释放的速度，你的线程资源就会被耗尽，此时便会产生阻塞问题，新的JOB将无法被执行，直到线程池中有新的线程被释放才被允许执行，特别是当你的作业需要长时间运行，同时该类任务执行间隔比较短的时候，阻塞将会特别严重。<br>举个例子，有个JOB它的调度策略是每秒运行一次，每次运行需要花费30秒，如果你的线程池大小为10的话，那么在第10秒线程池中所有的资源都将会占用，第11秒和后续的JOB都将处于等待执行状态，一直到第30秒，第1秒执行的JOB执行完毕释放了一个线程才轮到第11秒的作业执行，而此时已经阻塞了19个线程了，时间越往后阻塞越严重。</p>
+<p>如何解决你的线程池阻塞问题，首先你需要根据实际情况来相应调整线程池大小，但这并不能解决问题，只能稍微缓解下，最终还是会出现阻塞。其次调整长时间运行的作业调度策略，尽可能的延长时间间隔以达到间隔时间不小于执行时间。再次对于间隔时间短运行时间长的任务，在产生阻塞的时候为了不影响其他任务，你需要将这类任务作为有状态任务StatefulJob，该类任务不允许并发执行，只有在执行完毕后才运行后续的该类任务执行，也就是说该类任务最多只会同时占用一个线程，此外quartz会记录任务状态，Quartz会为StatefulJob第一次执行的时候实例化一个JobDetail，后续的该类任务会共享使用这个JobDetail实例，所以你可以通过JobDataMap来获取前面任务的数据或设置数据为后续的任务使用。这样你的作业就不会产生阻塞了。</p>
+<p>当然你可以自己实现线程池，只要实现ThreadPool接口就好，这里就不多说了。</p>
+<hr>
+<h1 id="作业仓库">作业仓库</h1><p>什么是作业仓库？官方解释是负责追踪你提供给调度器的所有工作数据，包括作业、触发器等。</p>
+<p>说直白点就是整个调度的持久化方案</p>
+<p>为我们的调度器实例选择一个合适的作业仓库是非常重要的一步，经过上面的教程你可能没有发现如何给我们的调度器设置持久化方案，这是因为Quartz默认为我们选择了一个最简单的作业仓库也就是RAMJobStore。除了这个Quartz还给我们提供了其他几种仓库，我们需要了解它们之间的区别，这样该如何选择就很简单了。一旦你选择了仓库，你就不会在代码里之间使用这些Store仓库实例，它们都是在幕后被Quartz自己调用，你只需要在代码里用调度器实例来开发就好了。</p>
+<ul>
+<li><p>RAMJobStore</p>
+<p>  这个是最容易使用的一种仓库，也是性能最好的一种了。顾名思义，RAMJobStore是将数据保存在RAM内存中的，这就是为什么它速度很快也很好配置的原因了。既然知道数据保存在RAM中，那缺点也很明显了，就是一旦你的应用挂掉或系统崩溃，你所有的调度信息都会丢失，这对一些应用来说可能就是灾难性的。那么该如何启用RAMJobStore呢，很简单，在配置文件quartz.properties里指定即可(在org.quartz的package下你可以看到默认的配置，你可以自己在资源路径下新建该文件来覆盖默认的配置)</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org.quartz.jobStore.class=org.quartz.simpl.RAMJobStore</span><br></pre></td></tr></table></figure>
+<p>  就这么简单，一旦你设置了该配置，你就可以通过StdSchedulerFactory来使用你的仓库了。</p>
+</li>
+<li><p>JDBCJobStore</p>
+<p>  这个仓库是将你的数据全部保存在数据库中的，由于是通过数据库来做持久化，所以会比RAMJobStore配置更多的选项(RAMJobStore不需要额外的设置就可以使用)来完成初始化。通过JDBCJobStore你可以将你的调度信息持久化到数据库，代价就是性能的降低和复杂性的提高，当然性能降低也没到特别糟糕的程度，特别是你为数据库表在主键上添加索引后性能也会提升不少。通常情况下，一个稍好的机器加像样的局域网触发器在执行检索和更新操作一般都是低于10毫秒的</p>
+<p>  下面开始讲解如何使用JDBCJobStore</p>
+<ol>
+<li><p>使用创建作业仓库使用的数据库表</p>
+<p> quartz的<a href="http://quartz-scheduler.org/downloads/destination?name=quartz-2.2.1-distribution.tar.gz&amp;bucket=tcdistributions&amp;file=quartz-2.2.1-distribution.tar.gz" target="_blank" rel="external">发行包</a>里为我们提供了主流数据库的sql脚本（目录<code>docs/dbTables</code>），找到我们想要的数据库脚本文件比如<code>tables_mysql.sql</code>，执行完sql后发现里面有N张表</p>
+<p> 表名|描述<br> —-|——-<br> QRTZ_CALENDARS|存储Quartz的Calendar信息<br> QRTZ_CRON_TRIGGERS|存储CronTrigger，包括Cron表达式和时区信息<br> QRTZ_FIRED_TRIGGERS|存储与已触发的Trigger相关的状态信息，以及相联Job的执行信息<br> QRTZ_PAUSED_TRIGGER_GRPS|存储已暂停的Trigger组的信息<br> QRTZ_SCHEDULER_STATE|存储少量的有关Scheduler的状态信息，和别的Scheduler实例<br> QRTZ_LOCKS|存储程序的悲观锁的信息，就是Quartz集群实现同步机制的行锁表<br> QRTZ_JOB_DETAILS|存储每一个已配置的Job的详细信息<br> QRTZ_JOB_LISTENERS|存储有关已配置的JobListener的信息<br> QRTZ_SIMPLE_TRIGGERS|存储简单的Trigger，包括重复次数、间隔、以及已触的次数<br> QRTZ_BLOG_TRIGGERS|Trigger作为Blob类型存储<br> QRTZ_TRIGGER_LISTENERS|存储已配置的TriggerListener的信息<br> QRTZ_TRIGGERS|存储已配置的Trigger的信息</p>
+<p> 具体的表结构这里就不赘述了</p>
+</li>
+<li><p>告诉调度器应该使用哪种持久化作业仓库</p>
+<p> 数据仓库所需的数据库我们已经建立好了，下面要告诉quartz我们要使用这个数据库做调度信息持久化，类似配置RAMJobStore，你同样需要配置<code>org.quartz.jobStore.class</code>来指定程序启用哪种JobStore。</p>
+<p> quartz为我们提供了2种JDBCJobStore，一种是JobStoreTX，一种是JobStoreCMT。前面是运行在独立环境中的，也就是quartz的事务不存在和应用容器的事务集成，可以自己commit/rollback，不受容器管理，TX后缀表示的就是事务的意思；而后者的事务是受容器管理的，从CMT后缀也可看出它的意思：Container Managed Transactions。通常情况下如果你构建的应用不使用应用服务器，比如WebLogic或JBoss，那么应选择JobStoreTX作为你的作业仓库</p>
+<p> OK，接下来配置你的quartz.properties，告诉调度器应该使用哪种作业仓库，这里我们选择JobStoreTX</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.class</span>=org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.JobStoreTX</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>选择你的数据库平台驱动代理</p>
+<p> Quartz依赖某个DriverDelegate来和指定的数据库进行通信，不管哪种代理都继承了StdJDBCDelegate，你需要根据不同的数据库平台来选择对应的某个特定方言的驱动代理，比如mysql数据库就可以直接选择StdJDBCDelegate，而oracle则需要选择OracleDelegate。我们以mysql为例，需要在quartz.properties中指定驱动代理：</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.driverDelegateClass</span>=org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.StdJDBCDelegate</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>配置你的数据源</p>
+<p> 既然使用的是JDBC驱动，那肯定要配置你的数据源了，首先你要在quartz.properties中为你的数据源定义一个NAME值，随便写，保证唯一即可。</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.DataSource</span>=myDS</span><br></pre></td></tr></table></figure>
+<p> 定义了数据源名称后，我们接下来配置数据源的相关属性，下面列出相关的一些配置选项，我们以mysql为例</p>
+ <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">#驱动名称</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.driver</span>=com<span class="class">.mysql</span><span class="class">.jdbc</span><span class="class">.Driver</span></span><br><span class="line">#连接地址</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.URL</span>=jdbc:mysql:<span class="comment">//localhost:3306/quartz</span></span><br><span class="line">#用户名</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.user</span>=root</span><br><span class="line">#密码</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.password</span>=root</span><br><span class="line">#最大连接数，可选</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.maxConnections</span>=<span class="number">10</span></span><br><span class="line">#检查连接SQL查询，可选</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.validationQuary</span>=select <span class="number">1</span> from QRTZ_JOB_DETAILS</span><br></pre></td></tr></table></figure>
+<p>OK，综合上面，我们给出一份使用JDBCJobStore的quartz.properties配置</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.class</span>=org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.JobStoreTX</span></span><br><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.driverDelegateClass</span>=org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.StdJDBCDelegate</span></span><br><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.DataSource</span>=myDS</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.driver</span>=com<span class="class">.mysql</span><span class="class">.jdbc</span><span class="class">.Driver</span></span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.URL</span>=jdbc:mysql:<span class="comment">//localhost:3306/quartz</span></span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.user</span>=root</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.password</span>=root</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.maxConnections</span>=<span class="number">10</span></span><br><span class="line">org<span class="class">.quartz</span><span class="class">.dataSource</span><span class="class">.myDS</span><span class="class">.validationQuary</span>=select <span class="number">1</span> from QRTZ_JOB_DETAILS</span><br></pre></td></tr></table></figure>
+<p>使用调度器来测试你的作业仓库吧</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler();</span><br><span class="line">   scheduler.start();</span><br><span class="line">   scheduler.shutdown();</span><br></pre></td></tr></table></figure>
+<p>你将看到相关日志输出</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">....</span><br><span class="line"><span class="number">17</span>:<span class="number">45</span>:<span class="number">40</span>,<span class="number">696</span> [main]  INFO (org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.JobStoreTX</span><span class="class">.java</span>:<span class="number">670</span>) - Using thread monitor-based data access locking (synchronization).</span><br><span class="line"><span class="number">17</span>:<span class="number">45</span>:<span class="number">40</span>,<span class="number">698</span> [main]  INFO (org<span class="class">.quartz</span><span class="class">.impl</span><span class="class">.jdbcjobstore</span><span class="class">.JobStoreTX</span><span class="class">.java</span>:<span class="number">59</span>) - JobStoreTX initialized.</span><br><span class="line">....</span><br><span class="line">Using job-store <span class="string">'org.quartz.impl.jdbcjobstore.JobStoreTX'</span> - which supports persistence. and is not clustered.</span><br></pre></td></tr></table></figure>
+<p>如果你添加了调度任务，你也能在数据库中看到相应的记录，这里就不贴出来了，具体方式你可以参考<a href="http://sdyy321.github.io/2015/07/01/Quartz%E4%BD%BF%E7%94%A8/" target="_blank" rel="external">上篇文章</a></p>
+<p><strong><em>需要注意的是，数据库里所有表都是以<code>QRTZ_</code>为前缀的，如果你创建了多套的Quartz数据库表，你需要改变每套表的前缀，此时你要再quartz.properties中配置<code>org.quartz.jobStore.tablePrefix</code>来改变前缀</em></strong></p>
+</li>
+</ol>
+</li>
+</ul>
+<h1 id="集群实现">集群实现</h1><p>如果你的应用是一个企业级应用，那么集群实现应该是必须的，集群的quartz比起单个实例提供了高可用性和伸缩性，所谓高可用性就是在系统出现故障时，任能为用户提供服务，实现故障转移，所谓伸缩性即是可以动态的增加新的资源到应用环境中，可以比较方便的做到扩展。那么quartz是如何实现集群的呢？</p>
+<ul>
+<li><p>集群的负载均衡</p>
+<p>  既然是集群，跨节点分布式工作能力肯定是必须的，这就需要负载均衡确保集群中每个节点会共同承担工作负载。负载均衡算法很多，quartz为我们提供的是随机算法来提供最低限度负载均衡的能力，但quartz的随机访问策略也不是胡乱来的，各个节点是通过竞争（使用数据库锁）来得到执行JOB的权利，一旦某个节点上JOB的trigger被触发，别的节点就不在尝试触发这个trigger了，直到下次触发时间到来再次竞争触发。</p>
+</li>
+<li><p>节点感知</p>
+<p>  quartz集群中每个节点都是一个独立的应用，各个节点之间是不相互通信的，没有交互，这点还是有别于其他类型的集群，既然不交互通信，那节点之间是如何相互感知对方的存在的呢，这就要依靠数据库表了，所以想要开启quartz的集群功能必须要启用JDBCJobStore作为作业仓库才可以实现。调度器本事是察觉不到自身是出于集群中的，只有配置给调度器的JDBCJobStore才知道。</p>
+</li>
+<li><p>启用JDBCJobStore</p>
+<p>  只有当启用持久化的JobStore才能使用quartz集群，因为所有节点都是通过数据库来管理的。如何启用请参见上面的作业仓库小节，这里就不再重复说了</p>
+</li>
+<li><p>设置集群配置</p>
+<p>  不管你是使用的JobStoreTX还是JobStoreCMT，在scheduler启动的时候会确认该Scheduler是否参与到集群中，这是通过配置<code>org.quartz.jobStore.isClustered</code>来确认的</p>
+  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.isClustered</span>=true</span><br></pre></td></tr></table></figure>
+<p>  其次一旦加入集群，当前节点运行的quartz实例需要有一个唯一标识以便区分，这需要在配置文件中定义</p>
+  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.scheduler</span><span class="class">.instanceName</span>=DefaultQuartzScheduler</span><br><span class="line">org<span class="class">.quartz</span><span class="class">.scheduler</span><span class="class">.instanceId</span>=AUTO</span><br></pre></td></tr></table></figure>
+<p>  <code>org.quartz.scheduler.instanceName</code>可以自己定义，而<code>org.quartz.scheduler.instanceId</code>最好设置为AUTO，它会默认以当前节点机器的IP来生成ID来保证每一个实例的ID都是不同的，这样就可以用同一套配置在所有节点上运行quartz了，不然你需要为每台机器配置硬编码来修改。</p>
+<p>  一旦你的<code>org.quartz.jobStore.isClustered</code>设置了true，那么在一个ClusterManager便会被创建启动，它会定期运行对调度器实例执行检入功能，那检入功能到底做了哪些事呢，翻看源码你可以发现clusterCheckIn这个方法里先是调用了findFailedInstances方法，然后执行了updateSchedulerState/insertSchedulerState方法，看方法名大家都可能会猜出来，findFailedInstances是用来获取所有聚群中已经失败的调度器实例，而updateSchedulerState/insertSchedulerState就是更新或新增自己的调度器状态，所谓状态其实也就是将当前系统时间写入到数据库，大家可以看看QRTZ_SCHEDULER_STATE这张表，每隔一段时间执行的检入操作也就是往这张表里更新LAST_CHECKIN_TIME字段。</p>
+<p>  既然是每隔一段时间，那这个时间究竟是多久呢，这就需要用户自己配置了</p>
+  <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">org<span class="class">.quartz</span><span class="class">.jobStore</span><span class="class">.clusterCheckinInterval</span>=<span class="number">20000</span></span><br></pre></td></tr></table></figure>
+<p>  单位毫秒，这个值越小，节点执行检入操作就越频繁。调取器实例出现故障后多快能被其他节点侦测到就是决定于这个检入时间间隔。</p>
+<p>  检测调度器实例是否在集群中正常运行是通过LAST_CHECKIN_TIME的值是否大于系统时间减去CHECKIN_INTERVAL，既然是靠时间差来检测，那如果集群中各个节点的系统时间不一致怎么办，那肯定会出现无法预料的情况，比如某个节点的时钟被设置为将来的时间，那么集群中其他节点在检测其他实例的时候也许就再也意识不到那个节点已经宕掉了。所以当你在集群中使用不同机器来运行quartz时，必须要确定每台机器的时钟是否都同步了。</p>
+<ul>
+<li>同步集群机器时钟</li>
+</ul>
+</li>
+<li><p>设置JobDetail可恢复</p>
+<p>  既然是在集群中，那就可以利用集群的优势了，最明显的一点就是高可用性，即便我某个节点上运行的JOB失败了，还可以由另一个正常工作的节点上的调度器来接过这个JOB重新运行，这样就不会影响业务了，想要如此做，你需要将你在代码里定义的JobDetail的requestRecovery属性设置为true。</p>
+  <figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">JobDetail jobDetail = JobBuilder</span><br><span class="line">       .newJob<span class="params">(HelloJob.class)</span></span><br><span class="line">       .withIdentity<span class="params">(<span class="string">"myJob"</span>, <span class="string">"group1"</span>)</span></span><br><span class="line">       .usingJobData<span class="params">(<span class="string">"jobSays"</span>, <span class="string">"Hello World!"</span>)</span></span><br><span class="line">       .usingJobData<span class="params">(<span class="string">"myFloatValue"</span>, <span class="number">3.141</span>f)</span></span><br><span class="line">       .storeDurably<span class="params">()</span></span><br><span class="line">       .requestRecovery<span class="params">()</span><span class="comment">//一旦失败可以重新恢复执行</span></span><br><span class="line">       .build<span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+<p>  如果你调用了<code>requestRecovery(false)</code>，那么这个作业实例将不可恢复，知道下次触发时由另一个节点的调度器来重新触发。</p>
+</li>
+</ul>
+<hr>
+<p>好了，暂时说这么多吧，quartz为我们任务调度提供了比较好的策略，当然它也有用的不爽的敌方，还有其他框架可以替代来做同样的事情，这个以后再跟大家聊.</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/java/">java</a>, <a href="/categories/java/作业调度/">作业调度</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/cluster/">cluster</a>, <a href="/tags/job/">job</a>, <a href="/tags/jobStore/">jobStore</a>, <a href="/tags/listener/">listener</a>, <a href="/tags/scheduler/">scheduler</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    
+    <a href="/2015/07/01/Quartz使用/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>2</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/job/" style="font-size: 15px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 15px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+
+  <embed src="http://www.xiami.com/widget/6806640_103326765_235_346_cccccc_dddddd_1/collectPlayer.swf" type="application/x-shockwave-flash" width="235" height="346" wmode="opaque"></embed>
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

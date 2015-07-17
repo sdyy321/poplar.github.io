@@ -233,7 +233,7 @@
 	
 		<div id="toc" class="toc-article">
 		<strong class="toc-title">文章目录</strong>
-		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#添加依赖"><span class="toc-number">1.</span> <span class="toc-text">添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义你的作业"><span class="toc-number">3.</span> <span class="toc-text">定义你的作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建作业定义的实例"><span class="toc-number">4.</span> <span class="toc-text">构建作业定义的实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为你的作业实例添加状态数据"><span class="toc-number">5.</span> <span class="toc-text">为你的作业实例添加状态数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#触发作业的执行"><span class="toc-number">6.</span> <span class="toc-text">触发作业的执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始你的调度器"><span class="toc-number">7.</span> <span class="toc-text">开始你的调度器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于日历表示法的作业调度"><span class="toc-number">8.</span> <span class="toc-text">基于日历表示法的作业调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可能会忽略的地方"><span class="toc-number">9.</span> <span class="toc-text">可能会忽略的地方</span></a></li></ol>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#添加依赖"><span class="toc-number">1.</span> <span class="toc-text">添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基本概念"><span class="toc-number">2.</span> <span class="toc-text">基本概念</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#定义你的作业"><span class="toc-number">3.</span> <span class="toc-text">定义你的作业</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#构建作业定义的实例"><span class="toc-number">4.</span> <span class="toc-text">构建作业定义的实例</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#为你的作业实例添加状态数据"><span class="toc-number">5.</span> <span class="toc-text">为你的作业实例添加状态数据</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#触发作业的执行"><span class="toc-number">6.</span> <span class="toc-text">触发作业的执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#开始你的调度器"><span class="toc-number">7.</span> <span class="toc-text">开始你的调度器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#基于日历表示法的作业调度"><span class="toc-number">8.</span> <span class="toc-text">基于日历表示法的作业调度</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#如何屏蔽一个时间区域"><span class="toc-number">9.</span> <span class="toc-text">如何屏蔽一个时间区域</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#可能会忽略的地方"><span class="toc-number">10.</span> <span class="toc-text">可能会忽略的地方</span></a></li></ol>
 		</div>
 	
 
@@ -243,9 +243,10 @@
 <h1 id="添加依赖">添加依赖</h1><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.quartz-scheduler<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>quartz<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.2.1<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>本文所有代码都是基于2.2.1版本</p>
 <hr>
-<h1 id="基本概念">基本概念</h1><p>quartz-scheduler最重要的2个基本单元是作业和触发器</p>
+<h1 id="基本概念">基本概念</h1><p>quartz-scheduler最重要的2个基本单元是作业和触发器，然后通过调度器来执行调度任务</p>
 <p>作业Job是能够调度的可执行任务</p>
-<p>触发器Trigger提供了对作业的调度</p>
+<p>触发器Trigger提供了对作业的调度，调度策略都是由它来设定</p>
+<p>调度器Scheduler是任务的运行容器，可以用来运行你所有绑定注册的作业</p>
 <hr>
 <h1 id="定义你的作业">定义你的作业</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloJob</span> <span class="keyword">implements</span> <span class="title">Job</span> </span>&#123;</span><br><span class="line">  <span class="annotation">@Override</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">execute</span><span class="params">(JobExecutionContext jobExecutionContext)</span> <span class="keyword">throws</span> JobExecutionException </span>&#123;</span><br><span class="line">    System.err.println(<span class="string">"Hello!  HelloJob is executing."</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>上面我们实现了Job来定义你的作业类，这个类仅仅表明该作业需要完成什么类型的任务</p>
@@ -440,8 +441,49 @@
 </tbody>
 </table>
 <hr>
+<h1 id="如何屏蔽一个时间区域">如何屏蔽一个时间区域</h1><p>上面我们知道如何利用日历表示法来在某些时刻触发想要的任务，但是反过来如果我们想要在某些时刻不想触发怎么办，这里就需要用到quartz的Calendar了，它专门用来屏蔽一个时间区域里的作业不会被触发，很简单的例子，节假日不触发某些任务，当然你可以使用日历表示法来计算你要触发的时刻，这无疑会异常麻烦，如果使用Calendar那就方便易懂多了。</p>
+<p>Calendar在quartz里有好几种类型，你可以根据需要选择你对于的类型来屏蔽日期</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CronCalendar</td>
+<td>使用表达式排除某些时间段不执行</td>
+</tr>
+<tr>
+<td>AnnualCalendar</td>
+<td>排除一年中某些天不执行</td>
+</tr>
+<tr>
+<td>DailyCalendar</td>
+<td>指定的时间范围内的每一天不执行</td>
+</tr>
+<tr>
+<td>HolidayCalendar</td>
+<td>排除节假日</td>
+</tr>
+<tr>
+<td>MonthlyCalendar</td>
+<td>排除月份中的数天</td>
+</tr>
+<tr>
+<td>WeeklyCalendar</td>
+<td>排除星期中的一天或多天</td>
+</tr>
+</tbody>
+</table>
+<p>加入我们需要排除五一劳动节不触发作业</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">Scheduler scheduler = StdSchedulerFactory.getDefaultScheduler<span class="params">()</span>;</span><br><span class="line">    </span><br><span class="line">AnnualCalendar holidays = new AnnualCalendar<span class="params">()</span>;</span><br><span class="line">java.util.Calendar excludedDay = java.util.Calendar.getInstance<span class="params">()</span>;</span><br><span class="line">excludedDay.set<span class="params">(<span class="number">2015</span>,<span class="number">5</span>,<span class="number">1</span>)</span>;<span class="comment">//要排除的日期</span></span><br><span class="line">holidays.setDayExcluded<span class="params">(excludedDay,<span class="literal">true</span>)</span>;<span class="comment">//设置排除日期</span></span><br><span class="line">scheduler.addCalendar<span class="params">(<span class="string">"myHolidays"</span>, holidays, <span class="literal">false</span>, <span class="literal">false</span>)</span>;</span><br><span class="line"></span><br><span class="line">JobDetail jobDetail = JobBuilder</span><br><span class="line">    .newJob<span class="params">(HelloJob.class)</span></span><br><span class="line">    .withIdentity<span class="params">(<span class="string">"myJob"</span>, <span class="string">"group1"</span>)</span></span><br><span class="line">    .build<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">CronTrigger cronTrigger = TriggerBuilder.newTrigger<span class="params">()</span></span><br><span class="line">    .withIdentity<span class="params">(<span class="string">"cronTrigger"</span>, <span class="string">"group1"</span>)</span></span><br><span class="line">    .startNow<span class="params">()</span></span><br><span class="line">    .withSchedule<span class="params">(CronScheduleBuilder.cronSchedule<span class="params">(<span class="string">"0 0 12 * * ?"</span>)</span>)</span><span class="comment">//每天中午12点触发</span></span><br><span class="line">    .modifiedByCalendar<span class="params">(<span class="string">"myHolidays"</span>)</span><span class="comment">//但是排除5月1日，不会触发</span></span><br><span class="line">    .build<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">scheduler.scheduleJob<span class="params">(jobDetail, cronTrigger)</span>;</span><br><span class="line">scheduler.start<span class="params">()</span>;</span><br></pre></td></tr></table></figure>
+<p>其他例子我就不一一讲解了，大家可以自行研究</p>
+<hr>
 <h1 id="可能会忽略的地方">可能会忽略的地方</h1><p>前面我们定义JobDetail和Trigger的时候都使用withIdentity定义了身份属性，同一个分组下的Job或Trigger的名称必须唯一，即一个Job或Trigger的key由名称（name）和分组（group）组成</p>
 <p>同一个Job可以有多个Trigger，2者是松耦合的，一般Job定义后便不需要重新定义了</p>
+<p>Scheduler使用一个线程池作为任务运行的基础设施，任务通过共享线程池中的线程提高运行效率</p>
 
       
     </div>
@@ -483,6 +525,8 @@ document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static
 
 
  <nav id="pagination" >
+    
+    <a href="/2015/07/08/Quartz进阶使用/" class="alignleft prev" >上一页</a>
     
     
     <a href="/2015/06/25/hexo博客实用技巧/" class="alignright next" >下一页</a>
@@ -529,9 +573,9 @@ var duoshuoQuery = {short_name:"sdyy321"};
   
     <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
   
-    <li><a href="/categories/java/">java</a><small>1</small></li>
+    <li><a href="/categories/java/">java</a><small>2</small></li>
   
-    <li><a href="/categories/java/作业调度/">作业调度</a><small>1</small></li>
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
   
   </ul>
 </div>
@@ -541,7 +585,7 @@ var duoshuoQuery = {short_name:"sdyy321"};
 <div class="widget tagcloud">
   <h3 class="title">标签云</h3>
   <div class="entry">
-    <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/job/" style="font-size: 10px;">job</a> <a href="/tags/scheduler/" style="font-size: 10px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a>
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/hexo/" style="font-size: 20px;">hexo</a> <a href="/tags/job/" style="font-size: 15px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 15px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a>
   </div>
 </div>
 
