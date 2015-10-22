@@ -1,0 +1,480 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper节点状态版本结构 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper节点状态版本结构">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper节点状态版本结构"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-08-24T03:44:08.000Z"><a href="/2015/08/24/zookeeper节点状态版本结构/">2015-08-24</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper节点状态版本结构</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Stat结构体"><span class="toc-number">1.</span> <span class="toc-text">Stat结构体</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">2.</span> <span class="toc-text">代码实现</span></a></li></ol>
+		</div>
+	
+
+        <p>了解zookeeper节点的Stat结构体有助于我们追踪zookeeper的时间，可以有效避免数据的非一致性。<br><a id="more"></a></p>
+<h1 id="Stat结构体">Stat结构体</h1><p>zookeeper为每个节点都会维护一个包含数据修改和版本号的Stat结构体，我们可以看看这个结构体都有什么组成</p>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stat</span> <span class="keyword">implements</span> <span class="title">Record</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> czxid;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> mzxid;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> ctime;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> mtime;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> version;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> cversion;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> aversion;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> ephemeralOwner;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> dataLength;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">int</span> numChildren;</span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">long</span> pzxid;</span><br><span class="line">  ....</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>首先我们需要明白zxid的含义，这代表zookeeper的事务ID，即每次对zookeeper节点的改变都会产生一个zxid，它表示zookeeper中所有改变的总顺序，每次改变都会有一个唯一的zxid，zxid是一个long类型的数值，数值越大表示发生的时间越靠后，比如zxid为1011的操作始终都是在zxid为1012的操作之前发生。<br>理解了zxid，你就会明白Stat结构体中czxid、mzxid和pzxid的含义：</p>
+<blockquote>
+<ul>
+<li>czxid:导致此节点创建的zxid</li>
+<li>mzxid:最后一次修改此节点的zxid</li>
+<li>pzxid:最后一次修改此节点下的子节点列表的zxid，需要注意的是子节点的列表变更，而不是子节点的内容变更</li>
+</ul>
+</blockquote>
+<p>除了zxid可以追踪到zookeeper的时间（非真正时间）外，zookeeper还使用真正的时间，当zookeeper的节点在创建和修改的时候都会使用真正时间作为时间戳</p>
+<p>&gt;</p>
+<ul>
+<li>ctime:创建此节点的时间</li>
+<li>mtime:最后一次修改此节点的时间</li>
+</ul>
+<p>而zookeeper时间追踪方式里还有一个非常重要的方式就是版本号version，zookeeper中每个节点都由一个版本号(version)与之关联，每当节点数据发生变化时，版本号都将递增</p>
+<p>&gt;</p>
+<ul>
+<li>version:此节点的数据被修改的次数</li>
+<li>cversion:此节点的子节点被修改的次数</li>
+<li>aversion:此节点的访问控制权限ACL被修改的次数</li>
+</ul>
+<p><strong><em>在做节点的修改和删除操作时需要附带版本号，在做更新前，zookeeper会比较客户端传来的version和当前服务器的version是否一致，不一致则会操作失败，这就有效阻止了数据的非一致性。</em></strong></p>
+<p>Stat的主要信息就是zxid相关信息、时间戳信息以及版本信息，除此以外还有</p>
+<p>&gt;</p>
+<ul>
+<li>ephemeralOwner:如果此节点是一个临时节点，那么它则表示对应的会话ID，否则则为0</li>
+<li>dataLength:此节点的数据长度</li>
+<li>numChildren:此节点的子节点数量</li>
+</ul>
+<h1 id="代码实现">代码实现</h1><p>我们使用curator作为我们的zookeeper客户端，下面我们基于curator来测试下zookeeper的Stat</p>
+<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">private String getStat(CuratorFramework curator,String path) throws Exception&#123;</span><br><span class="line">  Stat <span class="keyword">stat</span> = curator.checkExists().forPath(path);</span><br><span class="line">  String result = String.<span class="keyword">format</span>(<span class="string">"&#123;\"czxid\":<span class="variable">%s</span>,\"mzxid\":<span class="variable">%s</span>,\"ctime\":<span class="variable">%s</span>,\"mtime\":<span class="variable">%s</span>,\"version\":<span class="variable">%s</span>,\"cversion\":<span class="variable">%s</span>,\"aversion\":<span class="variable">%s</span>,\"ephemeralOwner\":<span class="variable">%s</span>,\"dataLength\":<span class="variable">%s</span>,\"numChildren\":<span class="variable">%s</span>,\"pzxid\":<span class="variable">%s</span>&#125;"</span>,</span><br><span class="line">      <span class="keyword">stat</span>.getCzxid(), <span class="keyword">stat</span>.getMzxid(),<span class="keyword">stat</span>.getCtime(),<span class="keyword">stat</span>.getMtime(),<span class="keyword">stat</span>.getVersion(),<span class="keyword">stat</span>.getCversion(),<span class="keyword">stat</span>.getAversion(),<span class="keyword">stat</span>.getEphemeralOwner(),<span class="keyword">stat</span>.getDataLength(),<span class="keyword">stat</span>.getNumChildren(),<span class="keyword">stat</span>.getPzxid());</span><br><span class="line">  <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们先写了一个工具方法，用来显示stat的信息，接下来我们测试Stat的状态变更</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void statTest<span class="params">()</span> throws Exception&#123;</span><br><span class="line">  String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">  RetryPolicy retryPolicy = new ExponentialBackoffRetry<span class="params">(<span class="number">1000</span>, <span class="number">3</span>)</span>;</span><br><span class="line">  CuratorFramework curator = CuratorFrameworkFactory.builder<span class="params">()</span></span><br><span class="line">      .connectString<span class="params">(zookeeperConnectionString)</span></span><br><span class="line">      .namespace<span class="params">(<span class="string">"mytest"</span>)</span></span><br><span class="line">      .sessionTimeoutMs<span class="params">(<span class="number">6000</span>)</span></span><br><span class="line">      .connectionTimeoutMs<span class="params">(<span class="number">15000</span>)</span></span><br><span class="line">      .retryPolicy<span class="params">(retryPolicy)</span></span><br><span class="line">      .build<span class="params">()</span>;</span><br><span class="line">  curator.start<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">  curator.create<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">  System.out.println<span class="params">(<span class="string">"创建/test结果：\n"</span>+getStat<span class="params">(curator,<span class="string">"/test"</span>)</span>)</span>;</span><br><span class="line">  curator.setData<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">  System.out.println<span class="params">(<span class="string">"修改/test内容结果：\n"</span> + getStat<span class="params">(curator,<span class="string">"/test"</span>)</span>)</span>;</span><br><span class="line">  curator.setACL<span class="params">()</span>.withACL<span class="params">(ZooDefs.Ids.OPEN_ACL_UNSAFE)</span>.forPath<span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">  System.out.println<span class="params">(<span class="string">"修改/test访问控制权限结果：\n"</span> + getStat<span class="params">(curator,<span class="string">"/test"</span>)</span>)</span>;</span><br><span class="line">  curator.create<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test/test1"</span>, <span class="string">"hello"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">  System.out.println<span class="params">(<span class="string">"创建/test子节点/test1结果：\n"</span> + getStat<span class="params">(curator,<span class="string">"/test"</span>)</span>)</span>;</span><br><span class="line">  curator.delete<span class="params">()</span>.deletingChildrenIfNeeded<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在上例中我们依次执行了创建节点-&gt;修改节点-&gt;修改ACL-&gt;创建子节点的流程，执行测试，查看console输入如下：<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#21019;&#24314;/test&#32467;&#26524;&#65306;&#10;&#123;&#34;czxid&#34;:8788,&#34;mzxid&#34;:8788,&#34;ctime&#34;:1440470064213,&#34;mtime&#34;:1440470064213,&#34;version&#34;:0,&#34;cversion&#34;:0,&#34;aversion&#34;:0,&#34;ephemeralOwner&#34;:0,&#34;dataLength&#34;:5,&#34;numChildren&#34;:0,&#34;pzxid&#34;:8788&#125;&#10;&#20462;&#25913;/test&#20869;&#23481;&#32467;&#26524;&#65306;&#10;&#123;&#34;czxid&#34;:8788,&#34;mzxid&#34;:8789,&#34;ctime&#34;:1440470064213,&#34;mtime&#34;:1440470064223,&#34;version&#34;:1,&#34;cversion&#34;:0,&#34;aversion&#34;:0,&#34;ephemeralOwner&#34;:0,&#34;dataLength&#34;:6,&#34;numChildren&#34;:0,&#34;pzxid&#34;:8788&#125;&#10;&#20462;&#25913;/test&#35775;&#38382;&#25511;&#21046;&#26435;&#38480;&#32467;&#26524;&#65306;&#10;&#123;&#34;czxid&#34;:8788,&#34;mzxid&#34;:8789,&#34;ctime&#34;:1440470064213,&#34;mtime&#34;:1440470064223,&#34;version&#34;:1,&#34;cversion&#34;:0,&#34;aversion&#34;:1,&#34;ephemeralOwner&#34;:0,&#34;dataLength&#34;:6,&#34;numChildren&#34;:0,&#34;pzxid&#34;:8788&#125;&#10;&#21019;&#24314;/test&#23376;&#33410;&#28857;/test1&#32467;&#26524;&#65306;&#10;&#123;&#34;czxid&#34;:8788,&#34;mzxid&#34;:8789,&#34;ctime&#34;:1440470064213,&#34;mtime&#34;:1440470064223,&#34;version&#34;:1,&#34;cversion&#34;:1,&#34;aversion&#34;:1,&#34;ephemeralOwner&#34;:0,&#34;dataLength&#34;:6,&#34;numChildren&#34;:1,&#34;pzxid&#34;:8791&#125;</span><br></pre></td></tr></table></figure></p>
+<p>从上面的结果我们可以看出<code>czxid</code>即创建节点的事务ID一直不变，都是第一步操作时产生的唯一ID，而<code>mzxid</code>只有在执行第二部操作即修改节点数据的时候才会增加1，从8788递增到8789，<code>pzxid</code>只有在执行第四步操作即添加子节点时才会增加1，从8790增加到8791(8790的操作为第三步即修改ACL时产生的ID)，上面4步操作每步操作都会使<code>zxid</code>数值递增，即从8788到8791。<code>ctime</code>一经创建便不会改变了，而<code>mtime</code>只有在第二部操作即修改节点数据时才会变更，<code>version</code>即节点数据修改次数在第二部操作递增了1，<code>cversion</code>即子节点列表变更次数在第四步操作递增了1，<code>aversion</code>即访问控制权限被修改次数在第三步操作递增了1，由于我们创建的都是持久化节点，所以<code>ephemeralOwner</code>都是为0，<code>dataLength</code>在修改节点数据后会变更，<code>numChildren</code>在第四步操作添加子节点后数量也递增了1。</p>
+<p>下面我们再测试下version来看看zookeeper的数据一致性</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">  @Test</span><br><span class="line">  public void versionTest<span class="params">()</span> throws Exception&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = new ExponentialBackoffRetry<span class="params">(<span class="number">1000</span>, <span class="number">3</span>)</span>;</span><br><span class="line">    CuratorFramework curator = CuratorFrameworkFactory.builder<span class="params">()</span></span><br><span class="line">        .connectString<span class="params">(zookeeperConnectionString)</span></span><br><span class="line">        .namespace<span class="params">(<span class="string">"mytest"</span>)</span></span><br><span class="line">        .sessionTimeoutMs<span class="params">(<span class="number">6000</span>)</span></span><br><span class="line">        .connectionTimeoutMs<span class="params">(<span class="number">15000</span>)</span></span><br><span class="line">        .retryPolicy<span class="params">(retryPolicy)</span></span><br><span class="line">        .build<span class="params">()</span>;</span><br><span class="line">    curator.start<span class="params">()</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//首次创建节点，version为0</span></span><br><span class="line">    curator.create<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">    <span class="comment">//修改节点数据，version递增后为1</span></span><br><span class="line">    curator.setData<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">    <span class="comment">//尝试删除版本为0的节点，抛出异常org.apache.zookeeper.KeeperException$BadVersionException</span></span><br><span class="line">    try &#123;</span><br><span class="line">      curator.delete<span class="params">()</span>.withVersion<span class="params">(<span class="number">0</span>)</span>.forPath<span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">    &#125; catch <span class="params">(Exception e)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> <span class="params">(!<span class="params">(e instanceof KeeperException.BadVersionException)</span>)</span> throw e;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//尝试修改版本为0的节点，抛出异常org.apache.zookeeper.KeeperException$BadVersionException</span></span><br><span class="line">    try &#123;</span><br><span class="line">      curator.setData<span class="params">()</span>.withVersion<span class="params">(<span class="number">0</span>)</span>.forPath<span class="params">(<span class="string">"/test"</span>, <span class="string">"hello3"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">    &#125; catch <span class="params">(Exception e)</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> <span class="params">(!<span class="params">(e instanceof KeeperException.BadVersionException)</span>)</span> throw e;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//修改版本为1的节点，version递增后为2</span></span><br><span class="line">    curator.setData<span class="params">()</span>.withVersion<span class="params">(<span class="number">1</span>)</span>.forPath<span class="params">(<span class="string">"/test"</span>,<span class="string">"hello3"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">    <span class="comment">//删除版本为2的节点</span></span><br><span class="line">    curator.delete<span class="params">()</span>.withVersion<span class="params">(<span class="number">2</span>)</span>.forPath<span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">    <span class="comment">//当版本号设置为-1时，可以匹配任意最新的版本，这可以帮助你无需查询版本号即可操作最新的数据</span></span><br><span class="line"><span class="comment">//    curator.setData().withVersion(-1).forPath("/test","hello4".getBytes());</span></span><br><span class="line"><span class="comment">//    curator.delete().withVersion(-1).forPath("/test");</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>上例中，修改和删除节点可以附带版本号，默认为-1，可以匹配任意最新的版本，如果不是-1，zookeeper会比较客户端传来的version和当前服务器的version是否一致，不一致则会操作失败，这就有效阻止了数据的非一致性</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/08/25/zookeeper客户端框架Curator缓存使用/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/07/31/zookeeper访问控制ACL/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

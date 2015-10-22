@@ -1,0 +1,481 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper客户端框架Curator分布式计数器 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper客户端框架Curator分布式计数器">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper客户端框架Curator分布式计数器"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-09-07T10:03:01.000Z"><a href="/2015/09/07/zookeeper客户端框架Curator分布式计数器/">2015-09-07</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper客户端框架Curator分布式计数器</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#分布式共享计数器"><span class="toc-number">1.</span> <span class="toc-text">分布式共享计数器</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#分布式自增计数器"><span class="toc-number">2.</span> <span class="toc-text">分布式自增计数器</span></a></li></ol>
+		</div>
+	
+
+        <p>curator为我们实现了一个集群共享的分布式计数器，只要使用想要的path就可以得到最新的计数器值，这是由zookeeper的一致性保证的。<br><a id="more"></a></p>
+<p>首先添加项目依赖，分布式计数器功能属于Curator-Recipes项目提供的，所以我们除了添加curator-framework依赖外还需要添加curator-recipes依赖才能使用分布式计数器。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-framework<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-recipes<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="分布式共享计数器">分布式共享计数器</h1><p>所有客户端监听同一个znode path, 并共享一个最新的integer计数值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CounterTest</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> CuratorFramework curator;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Before</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">    curator = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(zookeeperConnectionString)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">        .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">        .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">        .retryPolicy(retryPolicy)</span><br><span class="line">        .build();</span><br><span class="line">    curator.start();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sharedCountTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    SharedCount count = <span class="keyword">new</span> SharedCount(curator,<span class="string">"/count"</span>,<span class="number">0</span>);</span><br><span class="line">    count.start();</span><br><span class="line">    Assert.assertTrue(count.trySetCount(<span class="number">1</span>));</span><br><span class="line">    Assert.assertEquals(<span class="number">1</span>, count.getCount());</span><br><span class="line">    Assert.assertTrue(count.trySetCount(<span class="number">10</span>));</span><br><span class="line">    Assert.assertEquals(<span class="number">10</span>, count.getCount());</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>new SharedCount(curator,&quot;/count&quot;,0)</code>第三个参数为默认值，如果这个计数器还不曾被创建过，则以此默认值创建这个节点。你必须调用<code>start()</code>才能初始化这个计数器，不用的时候可以调用<code>close()</code>关闭。</p>
+<p><code>trySetCount(newValue)</code>可以设置计数器的值，这是一个过期的方法，不推荐使用，SharedCount初始化后会在本地保存对应的节点版本号和值。再看下面测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sharedCountTest2</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  SharedCount count = <span class="keyword">new</span> SharedCount(curator,<span class="string">"/count"</span>,<span class="number">0</span>);</span><br><span class="line">  count.start();</span><br><span class="line">  <span class="comment">//每次修改版本号都递增1</span></span><br><span class="line">  VersionedValue&lt;Integer&gt; versionedValue =  count.getVersionedValue();</span><br><span class="line">  <span class="keyword">int</span> initVersion = versionedValue.getVersion();</span><br><span class="line">  Assert.assertTrue(count.trySetCount(<span class="number">1</span>));</span><br><span class="line">  Assert.assertEquals(initVersion + <span class="number">1</span>, count.getVersionedValue().getVersion());</span><br><span class="line">  Assert.assertEquals(<span class="number">1</span>, count.getVersionedValue().getValue().intValue());</span><br><span class="line">  Assert.assertTrue(count.trySetCount(<span class="number">10</span>));</span><br><span class="line">  Assert.assertEquals(initVersion + <span class="number">2</span>, count.getVersionedValue().getVersion());</span><br><span class="line">  Assert.assertEquals(<span class="number">10</span>,count.getVersionedValue().getValue().intValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面例子中每次执行更新计数器，本地的<code>versionedValue</code>都变化了，版本每次都递增1，值为当前客户端设置的值。</p>
+<p>这个方法会先判断本地计数器缓存值版本是否是最新版本，如果是最新版本则更新值成功，返回true，否则返回false。再看下面测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sharedCountTest3</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  SharedCount count = <span class="keyword">new</span> SharedCount(curator,<span class="string">"/count"</span>,<span class="number">0</span>);</span><br><span class="line">  <span class="comment">//初始化后，计数器本地存贮的版本为最新版本，假设为16</span></span><br><span class="line">  count.start();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//我们通过客户端手动将计数器改为88，不通过SharedCount做修改，此时服务器计数器的版本递增1，变成了17</span></span><br><span class="line">  <span class="keyword">byte</span>[]      bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">4</span>];</span><br><span class="line">  ByteBuffer.wrap(bytes).putInt(<span class="number">88</span>);</span><br><span class="line">  curator.setData().forPath(<span class="string">"/count"</span>, bytes);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//本地的计数器版本不是最新版本了，任然是16，但实际服务器版本已经为17了</span></span><br><span class="line">  VersionedValue&lt;Integer&gt; versionedValue =  count.getVersionedValue();</span><br><span class="line">  <span class="keyword">int</span> initVersion = versionedValue.getVersion();</span><br><span class="line">  <span class="comment">//我们尝试修改计数器，失败</span></span><br><span class="line">  Assert.assertFalse(count.trySetCount(<span class="number">11</span>));</span><br><span class="line">  <span class="comment">//同步服务器，来更新本地计数器</span></span><br><span class="line">  <span class="keyword">int</span> value = count.getCount();</span><br><span class="line">  Assert.assertEquals(<span class="number">88</span>,value);</span><br><span class="line">  <span class="comment">//再次获取本地版本，发现已经和服务器同步了</span></span><br><span class="line">  Assert.assertEquals(initVersion + <span class="number">1</span>, count.getVersionedValue().getVersion());</span><br><span class="line">  <span class="comment">//可以再次更新计数器了</span></span><br><span class="line">  Assert.assertTrue(count.trySetCount(<span class="number">33</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们发现如果本地SharedCount保存的版本号不是最新的，则不能更新计数器，此时你可以通过<code>getCount()</code>来同步版本更新本地数据，这样就可以再次更新计数器了。</p>
+<p>上面我们说过<code>trySetCount(newValue)</code>是个过期方法，不推荐使用，替代的方法是<code>trySetCount(versionedValue,newValue)</code>，看下面测试</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sharedCountTest4</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  SharedCount count = <span class="keyword">new</span> SharedCount(curator,<span class="string">"/count"</span>,<span class="number">0</span>);</span><br><span class="line">  count.start();</span><br><span class="line">  <span class="comment">//初始化后，假设本地版本为16</span></span><br><span class="line">  VersionedValue&lt;Integer&gt; versionedValue = count.getVersionedValue();</span><br><span class="line">  <span class="keyword">int</span> initVersion = versionedValue.getVersion();<span class="comment">//eg. 16</span></span><br><span class="line">  <span class="comment">//携带本地版本更新计数器，成功</span></span><br><span class="line">  Assert.assertTrue(count.trySetCount(count.getVersionedValue(), <span class="number">10</span>));</span><br><span class="line">  <span class="comment">//本地版本递增1，和服务器同步，此时版本为17</span></span><br><span class="line">  Assert.assertEquals(initVersion +<span class="number">1</span>,count.getVersionedValue().getVersion());</span><br><span class="line"></span><br><span class="line">  <span class="comment">//我们通过客户端手动将计数器改为88，不通过SharedCount做修改，此时服务器计数器的版本递增1，变成了18</span></span><br><span class="line">  <span class="keyword">byte</span>[]      bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">4</span>];</span><br><span class="line">  ByteBuffer.wrap(bytes).putInt(<span class="number">88</span>);</span><br><span class="line">  curator.setData().forPath(<span class="string">"/count"</span>, bytes);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//携带本地版本更新计数器，失败，因为本地版本已经不是最新版本了</span></span><br><span class="line">  Assert.assertFalse(count.trySetCount(count.getVersionedValue(), <span class="number">20</span>));</span><br><span class="line">  <span class="comment">//同步服务器，来更新本地计数器，此时本地版本也为18了</span></span><br><span class="line">  <span class="keyword">int</span> value = count.getCount();</span><br><span class="line">  Assert.assertEquals(<span class="number">88</span>,value);</span><br><span class="line">  <span class="comment">//再次携带本地版本更新计数器，成功</span></span><br><span class="line">  Assert.assertTrue(count.trySetCount(count.getVersionedValue(),<span class="number">20</span>));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>trySetCount(versionedValue,newValue)</code>每次都会携带本地版本来进行更新，如果本地版本不是最新的，则更新失败，此时你可以通过<code>getCount()</code>来同步版本，使本地版本为最新版本，这样就可以更新计数器了。</p>
+<p>既然每次都要比较本地版本是不是最新版本，那如果集群中很多客户端都在操作这个计数器，我们本地的客户端可能随时都可能更新失败，这样就可能需要我们不停的通过<code>getCount()</code>来刷新本地版本，有没有更好的办法来避免这类开销呢？那就要为我们的SharedCount设置监听器SharedCountListener了，看下面代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">sharedCountTest5</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  SharedCount count = <span class="keyword">new</span> SharedCount(curator,<span class="string">"/count"</span>,<span class="number">0</span>);</span><br><span class="line">  count.start();</span><br><span class="line">  count.addListener(<span class="keyword">new</span> SharedCountListener() &#123;</span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">countHasChanged</span><span class="params">(SharedCountReader sharedCount, <span class="keyword">int</span> newCount)</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">      <span class="comment">//计数器变更</span></span><br><span class="line">      VersionedValue&lt;Integer&gt; versionedValue = sharedCount.getVersionedValue();</span><br><span class="line">      System.out.println(versionedValue.getVersion() + <span class="string">"--&gt;"</span> + versionedValue.getValue());</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="annotation">@Override</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">stateChanged</span><span class="params">(CuratorFramework client, ConnectionState newState)</span> </span>&#123;</span><br><span class="line">      <span class="keyword">switch</span> (newState) &#123;</span><br><span class="line">        <span class="keyword">case</span> RECONNECTED:<span class="comment">//如果重新连接上服务器，需要手动刷新本地版本</span></span><br><span class="line">          count.getCount();</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">  CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      <span class="comment">//手动修改计数器</span></span><br><span class="line">      <span class="keyword">byte</span>[] bytes = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">4</span>];</span><br><span class="line">      ByteBuffer.wrap(bytes).putInt(<span class="number">88</span>);</span><br><span class="line">      curator.setData().forPath(<span class="string">"/count"</span>, bytes);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).whenComplete((aVoid, throwable) -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">    	<span class="comment">//更新成功，虽然上面我们手动修改了计数器，但是监听器帮我们同步了本地版本</span></span><br><span class="line">      Assert.assertTrue(count.trySetCount(count.getVersionedValue(), <span class="number">20</span>));</span><br><span class="line">      countDownLatch.countDown();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  countDownLatch.await();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过<code>addListener</code>来设置计数器的监听器，这样一但服务器上的计数器值发生变更会收到通知同时更新本地的SharedCount版本，如果连接状态变更，监听器也会收到通知，建议在连接重连后手动刷新下本地版本。</p>
+<hr>
+<h1 id="分布式自增计数器">分布式自增计数器</h1><p>除了提供int类型的共享计数器外，curator还提供了自增计数器<code>DistributedAtomicNumber</code>，它有2个实现类<code>DistributedAtomicInteger</code>和<code>DistributedAtomicLong</code>。我们这里只介绍<code>DistributedAtomicLong</code>，它的计数范围比<code>SharedCount</code>要大。我们先看看它的基本操作api：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">atomicCounterTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  DistributedAtomicLong count = <span class="keyword">new</span> DistributedAtomicLong(curator,<span class="string">"/atomicCount"</span>,<span class="keyword">new</span> RetryOneTime(<span class="number">1</span>));</span><br><span class="line">  <span class="comment">//获取当前值</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value = count.get();</span><br><span class="line">  System.out.println(<span class="string">"succeeded:"</span> + value.succeeded() + <span class="string">",preValue:"</span> + value.preValue() + <span class="string">",postValue:"</span> + value.postValue());</span><br><span class="line">  <span class="comment">//递增1</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value2 = count.increment();</span><br><span class="line">  System.out.println(<span class="string">"succeeded:"</span> + value2.succeeded() + <span class="string">",preValue:"</span> + value2.preValue() + <span class="string">",postValue:"</span> + value2.postValue());</span><br><span class="line">  <span class="comment">//递减1</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value3 = count.decrement();</span><br><span class="line">  System.out.println(<span class="string">"succeeded:"</span> + value3.succeeded() + <span class="string">",preValue:"</span> + value3.preValue() + <span class="string">",postValue:"</span> + value3.postValue());</span><br><span class="line">  <span class="comment">//增加指定的值</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value4 = count.add(<span class="number">10L</span>);</span><br><span class="line">  System.out.println(<span class="string">"succeeded:"</span> + value4.succeeded() + <span class="string">",preValue:"</span> + value4.preValue() + <span class="string">",postValue:"</span> + value4.postValue());</span><br><span class="line">  <span class="comment">//减去指定的值</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value5 = count.subtract(<span class="number">10L</span>);</span><br><span class="line">  System.out.println(<span class="string">"succeeded:"</span> + value5.succeeded() + <span class="string">",preValue:"</span> + value5.preValue() + <span class="string">",postValue:"</span> + value5.postValue());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果<code>/atomicCount</code>这个计数器以前没有产生过，在第一次设置值的时候会生成这个节点(在本例中是调用increment()时生成，get()不会生成节点)。测试用例运行结果如下：</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">succeeded:</span><span class="literal">true</span>,<span class="string">preValue:</span><span class="number">0</span>,<span class="string">postValue:</span><span class="number">0</span></span><br><span class="line"><span class="string">succeeded:</span><span class="literal">true</span>,<span class="string">preValue:</span><span class="number">0</span>,<span class="string">postValue:</span><span class="number">1</span></span><br><span class="line"><span class="string">succeeded:</span><span class="literal">true</span>,<span class="string">preValue:</span><span class="number">1</span>,<span class="string">postValue:</span><span class="number">0</span></span><br><span class="line"><span class="string">succeeded:</span><span class="literal">true</span>,<span class="string">preValue:</span><span class="number">0</span>,<span class="string">postValue:</span><span class="number">10</span></span><br><span class="line"><span class="string">succeeded:</span><span class="literal">true</span>,<span class="string">preValue:</span><span class="number">10</span>,<span class="string">postValue:</span><span class="number">0</span></span><br></pre></td></tr></table></figure>
+<p>每次执行api都会返回一个<code>AtomicValue</code>，它保存了操作的结果<code>succeeded()</code>，操作前的值<code>preValue()</code>和操作后的值<code>postValue()</code>。</p>
+<p>那么如果我们的计数器里如果存的是一个非法的值(非数字)，会出现什么情况呢，我们看看：</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@Test<span class="params">(expected = RuntimeException.class)</span></span><br><span class="line">public void atomicCounterTest2<span class="params">()</span> throws Exception &#123;</span><br><span class="line">  <span class="comment">//我们先手动创建一个值为字符串的节点</span></span><br><span class="line">  curator.create<span class="params">()</span>.forPath<span class="params">(<span class="string">"/testCorruptedCounter"</span>,<span class="string">"foo"</span>.getBytes<span class="params">()</span>)</span>;</span><br><span class="line">  <span class="comment">//然后我们尝试将这个节点作为计数器</span></span><br><span class="line">  DistributedAtomicLong count = new DistributedAtomicLong<span class="params">(curator,<span class="string">"/testCorruptedCounter"</span>,new RetryOneTime<span class="params">(<span class="number">1</span>)</span>)</span>;</span><br><span class="line">  <span class="comment">//获取计数器的值</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value = count.get<span class="params">()</span>;</span><br><span class="line">  Assert.assertTrue<span class="params">(value.succeeded<span class="params">()</span>)</span>;</span><br><span class="line">  System.out.println<span class="params">(<span class="string">"preValue:"</span> + value.preValue<span class="params">()</span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行上面测试，我们发现，获取值的时候不会报错，即succeeded是成功的，但最后在获取计数器的preValue时会抛出异常，类似下面：</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">java<span class="class">.lang</span><span class="class">.RuntimeException</span>: Corrupted data <span class="keyword">for</span> node <span class="string">"/testCorruptedCounter"</span>: [<span class="number">0</span>x66, <span class="number">0</span>x6f, <span class="number">0</span>x6f]</span><br></pre></td></tr></table></figure>
+<p>刚刚说过如果计数器不存在，那么在设置值的时候会产生节点，但是如果我们比较一个不存在的计数器节点值会是什么情况，我们看看：</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">@Test</span><br><span class="line">public void atomicCounterTest3<span class="params">()</span> throws Exception &#123;</span><br><span class="line">  <span class="comment">//确保/atomicCount节点不存在方便测试</span></span><br><span class="line">  <span class="keyword">if</span> <span class="params">(curator.checkExists<span class="params">()</span>.forPath<span class="params">(<span class="string">"/atomicCount"</span>)</span> != null)</span></span><br><span class="line">    curator.delete<span class="params">()</span>.forPath<span class="params">(<span class="string">"/atomicCount"</span>)</span>;</span><br><span class="line"></span><br><span class="line">  DistributedAtomicLong count = new DistributedAtomicLong<span class="params">(curator,<span class="string">"/atomicCount"</span>,new RetryOneTime<span class="params">(<span class="number">1</span>)</span>)</span>;</span><br><span class="line">  <span class="comment">//获取计数器值</span></span><br><span class="line">  AtomicValue&lt;Long&gt; value = count.get<span class="params">()</span>;</span><br><span class="line">  Assert.assertTrue<span class="params">(value.succeeded<span class="params">()</span>)</span>;</span><br><span class="line">  <span class="comment">//比较值并设置新值</span></span><br><span class="line">  value = count.compareAndSet<span class="params">(<span class="number">0</span>L,<span class="number">1</span>L)</span>;</span><br><span class="line">  <span class="comment">//由于计数器还未产生对应的节点，这里比较结果为false，也不会设置新的值，所以postValue任然为0</span></span><br><span class="line">  Assert.assertFalse<span class="params">(value.succeeded<span class="params">()</span>)</span>;</span><br><span class="line">  Assert.assertEquals<span class="params">(<span class="number">0</span>L, value.postValue<span class="params">()</span>.longValue<span class="params">()</span>)</span>;</span><br><span class="line">  <span class="comment">//初始化计数器，会产生对应的节点</span></span><br><span class="line">  Assert.assertTrue<span class="params">(count.initialize<span class="params">(<span class="number">0</span>L)</span>)</span>;</span><br><span class="line">  <span class="comment">//再次尝试比较值并设置新值</span></span><br><span class="line">  value = count.compareAndSet<span class="params">(<span class="number">0</span>L,<span class="number">1</span>L)</span>;</span><br><span class="line">  Assert.assertTrue<span class="params">(value.succeeded<span class="params">()</span>)</span>;</span><br><span class="line">  Assert.assertEquals<span class="params">(<span class="number">1</span>L, value.postValue<span class="params">()</span>.longValue<span class="params">()</span>)</span>;</span><br><span class="line">  <span class="comment">//再次比较值</span></span><br><span class="line">  value = count.compareAndSet<span class="params">(<span class="number">0</span>L,<span class="number">2</span>L)</span>;</span><br><span class="line">  Assert.assertFalse<span class="params">(value.succeeded<span class="params">()</span>)</span>;</span><br><span class="line">  Assert.assertEquals<span class="params">(<span class="number">0</span>L,value.postValue<span class="params">()</span>.longValue<span class="params">()</span>)</span>;</span><br><span class="line">  <span class="comment">//再次尝试初始化计数器，失败，因为计数器节点已经存在，无法重新创建节点</span></span><br><span class="line">  Assert.assertFalse<span class="params">(count.initialize<span class="params">(<span class="number">0</span>L)</span>)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>通过测试我们比较清楚计数器的产生时期，我们可以通过<code>initialize()</code>来手动初始化计数器，但是如果计数器已经存在，则会失败。这里建议大家在实例化<code>DistributedAtomicLong</code>后不要马上做<code>compareAndSet</code>比较操作。</p>
+<p>尝试原子增加的计数器首先它尝试乐观锁.如果失败，可选的InterProcessMutex会被采用. 不管是optimistic 还是 mutex, 重试机制都被用来尝试增加值。</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">PromotedToLock promotedToLock = PromotedToLock.builder<span class="params">()</span>.lockPath<span class="params">(<span class="string">"/lock"</span>)</span>.retryPolicy<span class="params">(new RetryOneTime<span class="params">(<span class="number">1</span>)</span>)</span>.build<span class="params">()</span>;</span><br><span class="line">DistributedAtomicLong count = new DistributedAtomicLong<span class="params">(curator,<span class="string">"/atomicCount"</span>,new RetryOneTime<span class="params">(<span class="number">1</span>)</span>,promotedToLock)</span>;</span><br></pre></td></tr></table></figure>
+<p><code>DistributedAtomicLong</code>另外一个构造函数提供了分布式锁的更新策略，它会在乐观锁更新计数器失败后使用。</p>
+<p>更新一个计数器的流程如下：</p>
+<p>1、先获取preValue的值，并将节点状态保存在本地，逻辑代码类似下面：</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Stat</span>        stat = new <span class="type">Stat</span>();</span><br><span class="line"><span class="literal">result</span>.preValue = client.getData().storingStatIn(stat).forPath(path);</span><br></pre></td></tr></table></figure>
+<p>2、判断是创建节点还是更新节点数据，如果是更新节点数据，则更新刚刚得到的版本号的数据（乐观锁更新）</p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="params">( createIt )</span>&#123;</span><br><span class="line">    client.create<span class="params">()</span>.forPath<span class="params">(path, newValue)</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    client.setData<span class="params">()</span>.withVersion<span class="params">(stat.getVersion<span class="params">()</span>)</span>.forPath<span class="params">(path, newValue)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>3、如果更新计数器失败，则根据重试策略进行重试，同时乐观锁重试次数（<code>optimisticTries</code>）递增1<br>4、更新使用乐观锁修改数据所花费的时间：optimisticTimeMs<br>5、如果重试后任然失败并且指定了使用<code>PromotedToLock</code>，则使用<code>InterProcessMutex</code>可重入分布式锁来更新计数器</p>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">tryOptimistic(<span class="literal">result</span>, makeValue);</span><br><span class="line"><span class="keyword">if</span> ( !<span class="literal">result</span>.succeeded() &amp;&amp; (mutex != null) ) &#123;</span><br><span class="line">    tryWithMutex(<span class="literal">result</span>, makeValue);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>6、使用分布式锁更新计数器，先尝试获取锁，如果获取到锁，再重复上面的1、2、3步骤，使用乐观锁来更新计数器，最后释放锁，重试只会在获取锁后执行，不会每次重试都尝试获取锁，每次执行重试都会递增<code>promotedLockTries</code>，使之+1.<br>7、不管是否获取到锁，最终都更新使用分布式锁修改数据所花费的时间：promotedTimeMs</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/09/10/zookeeper客户端框架Curator分布式锁/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/09/06/zookeeper客户端框架Curator监听器使用/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

@@ -1,0 +1,469 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper客户端框架Curator分布式栅栏 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper客户端框架Curator分布式栅栏">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper客户端框架Curator分布式栅栏"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-09-15T03:46:47.000Z"><a href="/2015/09/15/zookeeper客户端框架Curator分布式栅栏/">2015-09-15</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper客户端框架Curator分布式栅栏</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#栅栏_DistributedBarrier"><span class="toc-number">1.</span> <span class="toc-text">栅栏 DistributedBarrier</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#双栅栏_DistributedDoubleBarrier"><span class="toc-number">2.</span> <span class="toc-text">双栅栏 DistributedDoubleBarrier</span></a></li></ol>
+		</div>
+	
+
+        <p>curator为我们提供了分布式的栅栏功能，它会阻塞所有节点上的等待进程，直到撤销栅栏，所有等待的节点进程同时继续进行，就像跑马比赛一样，枪声响起，栅栏撤除，所有马匹飞奔而出。<br><a id="more"></a></p>
+<p>首先添加项目依赖，分布式栅栏功能属于Curator-Recipes项目提供的，所以我们除了添加curator-framework依赖外还需要添加curator-recipes依赖才能使用分布式栅栏。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-framework<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-recipes<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="栅栏_DistributedBarrier">栅栏 DistributedBarrier</h1><p>curator的栅栏由<code>DistributedBarrier</code>实现，我们先直接看个例子：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">BarrierTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> CuratorFramework curator;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Before</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">    curator = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(zookeeperConnectionString)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">        .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">        .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">        .retryPolicy(retryPolicy)</span><br><span class="line">        .build();</span><br><span class="line">    curator.start();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">barrierTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    DistributedBarrier barrier = <span class="keyword">new</span> DistributedBarrier(curator,<span class="string">"/barrier"</span>);</span><br><span class="line">    barrier.setBarrier();</span><br><span class="line">    ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">5</span>);</span><br><span class="line">    IntStream.range(<span class="number">1</span>,<span class="number">6</span>).forEach(value -&gt; &#123;</span><br><span class="line">      executorService.submit(() -&gt; &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">          DistributedBarrier tempBarrier = <span class="keyword">new</span> DistributedBarrier(curator,<span class="string">"/barrier"</span>);</span><br><span class="line">          tempBarrier.waitOnBarrier();</span><br><span class="line">          System.out.println(value + <span class="string">" running at "</span>+ System.currentTimeMillis());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">          e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">    barrier.removeBarrier();</span><br><span class="line">    executorService.awaitTermination(<span class="number">3</span>, TimeUnit.SECONDS);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们先通过<code>setBarrier()</code>设置了栅栏，它将阻塞在这个节点上等待的线程，然后在线程池中我们添加了5匹马通过<code>waitOnBarrier()</code>来等待栅栏撤除，接着我们通过<code>removeBarrier()</code>移除栅栏，线程池中的线程同时执行，结果如下：</p>
+<figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">2</span> <span class="property">running</span> <span class="keyword">at</span> <span class="number">1442288739369</span></span><br><span class="line"><span class="number">3</span> <span class="property">running</span> <span class="keyword">at</span> <span class="number">1442288739369</span></span><br><span class="line"><span class="number">5</span> <span class="property">running</span> <span class="keyword">at</span> <span class="number">1442288739369</span></span><br><span class="line"><span class="number">4</span> <span class="property">running</span> <span class="keyword">at</span> <span class="number">1442288739369</span></span><br><span class="line"><span class="number">1</span> <span class="property">running</span> <span class="keyword">at</span> <span class="number">1442288739369</span></span><br></pre></td></tr></table></figure>
+<p>我们发现线程运行的时间同时相同的，都是在同一时刻开始运行。</p>
+<p>其实curator实现的分布式栅栏很简单，<code>setBarrier()</code>时会新建一个栅栏节点</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.create().creatingParentsIfNeeded().forPath(barrierPath);</span><br></pre></td></tr></table></figure>
+<p>其他客户端线程在<code>waitOnBarrier()</code>等待栅栏时会检查栅栏节点并在这个节点上添加一个watcher，一旦这个栅栏节点撤除了会收到通知</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">client.checkExists().usingWatcher(watcher).forPath(barrierPath)</span><br></pre></td></tr></table></figure>
+<p>检查栅栏节点，如果存在栅栏则调用线程的<code>wait()</code>使线程处于等待状态，等待栅栏节点被撤除，一旦收到栅栏撤销通知则会通过<code>notifyFromWatcher()</code>来唤醒线程继续运行</p>
+<p><code>removeBarrier()</code>撤销栅栏其实也就是删除这个栅栏节点</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">client</span><span class="class">.delete</span>()<span class="class">.forPath</span>(<span class="tag">barrierPath</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h1 id="双栅栏_DistributedDoubleBarrier">双栅栏 DistributedDoubleBarrier</h1><p>上面我们讲了栅栏的实现，除此以外，curator还提供了双栅栏实现，所谓双栅栏，就是在计算的开始设置栅栏(你需要指定栏位数量，也就是指定这个栅栏上可以跑多少匹马)，等栏位饱满后撤销栅栏，所有进程同时开始，同时在终点设置对应栏位的栅栏，运行的进程完成后进入栅栏，只有当所有栏位上的进程完成后才能同时离开栅栏，计算结束。我们上代码：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">doubleBarrierTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  curator.blockUntilConnected();</span><br><span class="line">  CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">5</span>);</span><br><span class="line">  ExecutorService executorService = Executors.newFixedThreadPool(<span class="number">5</span>);</span><br><span class="line">  AtomicInteger count = <span class="keyword">new</span> AtomicInteger();</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">5</span>; i++) &#123;</span><br><span class="line">    executorService.submit(() -&gt; &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">int</span> index = count.incrementAndGet();</span><br><span class="line">        DistributedDoubleBarrier tempBarrier = <span class="keyword">new</span> DistributedDoubleBarrier(curator,<span class="string">"/doubleBarrier"</span>,<span class="number">5</span>);</span><br><span class="line">        System.out.println(index + <span class="string">" enter at "</span> + System.currentTimeMillis());</span><br><span class="line">        tempBarrier.enter();<span class="comment">//进入栅栏，等待栏位满足后撤除栅栏</span></span><br><span class="line">        System.out.println(index + <span class="string">" running at "</span> + System.currentTimeMillis());</span><br><span class="line">        Thread.sleep(<span class="number">1000</span> * index);</span><br><span class="line">        tempBarrier.leave();<span class="comment">//离开栅栏，等待所有栏位的进程完成后撤除栅栏同时离开</span></span><br><span class="line">        countDownLatch.countDown();</span><br><span class="line">        System.out.println(index + <span class="string">" leave at "</span>+ System.currentTimeMillis());</span><br><span class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  countDownLatch.await();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上例中，我们通过<code>new DistributedDoubleBarrier(curator,&quot;/doubleBarrier&quot;,5)</code>来指定需要使用的双栅栏，第三个构造参数用来指定栏位。<br>然后每秒我们都会新增一个线程来进入栅栏，通过调用<code>DistributedDoubleBarrier</code>对象的<code>enter()</code>来进入栅栏，这里会一直阻塞线程，直到进入栅栏的进程数量满足了栏位，才会唤醒线程，让栏位上的所有线程同时运行。<br>例子中我们用<code>Thread.sleep(1000 * index);</code>来模拟线程运行需要的时间，然后在进程完成后调用<code>leave()</code>来准备离开，这里也会一直阻塞线程，直到进入栅栏的进程全部完成才会唤醒线程，让栏位上的所有线程同时结束。</p>
+<p>上例的测试结果如下：</p>
+<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="keyword">enter</span> <span class="preprocessor">at</span> <span class="number">1444288004390</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">enter</span> <span class="preprocessor">at</span> <span class="number">1444288005381</span></span><br><span class="line"><span class="number">3</span> <span class="keyword">enter</span> <span class="preprocessor">at</span> <span class="number">1444288006384</span></span><br><span class="line"><span class="number">4</span> <span class="keyword">enter</span> <span class="preprocessor">at</span> <span class="number">1444288007387</span></span><br><span class="line"><span class="number">5</span> <span class="keyword">enter</span> <span class="preprocessor">at</span> <span class="number">1444288008390</span></span><br><span class="line"><span class="number">1</span> running <span class="preprocessor">at</span> <span class="number">1444288008395</span></span><br><span class="line"><span class="number">3</span> running <span class="preprocessor">at</span> <span class="number">1444288008395</span></span><br><span class="line"><span class="number">4</span> running <span class="preprocessor">at</span> <span class="number">1444288008395</span></span><br><span class="line"><span class="number">5</span> running <span class="preprocessor">at</span> <span class="number">1444288008395</span></span><br><span class="line"><span class="number">2</span> running <span class="preprocessor">at</span> <span class="number">1444288008395</span></span><br><span class="line"><span class="number">5</span> <span class="keyword">leave</span> <span class="preprocessor">at</span> <span class="number">1444288013404</span></span><br><span class="line"><span class="number">3</span> <span class="keyword">leave</span> <span class="preprocessor">at</span> <span class="number">1444288013410</span></span><br><span class="line"><span class="number">1</span> <span class="keyword">leave</span> <span class="preprocessor">at</span> <span class="number">1444288013410</span></span><br><span class="line"><span class="number">2</span> <span class="keyword">leave</span> <span class="preprocessor">at</span> <span class="number">1444288013410</span></span><br><span class="line"><span class="number">4</span> <span class="keyword">leave</span> <span class="preprocessor">at</span> <span class="number">1444288013410</span></span><br></pre></td></tr></table></figure>
+<p>测试结果基本也达到了我们的预期，开始每一秒都有一个进程enter进入栏位，然后所有栏位的进程同时running，最后所有栏位的进程同时leave（最后一个完成的进程leave时间要比其他的稍早一点，因为其他进程受到通知需要消耗一段时间）。</p>
+<p>双栅栏在zookeeper角度来说实现逻辑如下：</p>
+<p>1、<code>enter()</code>进入栏位，判断ready子节点是否存在，并为双栅栏节点<code>/doubleBarrier</code>添加watcher，监控ready子节点<code>/doubleBarrier/ready</code>，如果ready子节点不存在阻塞线程，一旦收到ready节点创建通知唤醒线程。在双栅栏path路径下新建一个随机子路径randomUUID，如<code>/doubleBarrier/${randomUUID}</code>，同时判断双栅栏下的栏位个数是否已经满足，即判断<code>/doubleBarrier</code>下的子节点个数，若满足栏位数量，则在双栅栏path节点下新建一个<code>ready</code>子路径，如<code>/doubleBarrier/ready</code></p>
+<p>  enter方法关键代码：</p>
+  <figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">boolean readyPathExists = (client.checkExists().usingWatcher(watcher).forPath(readyPath) != null);</span><br><span class="line">client.create().creatingParentsIfNeeded().withMode(<span class="type">CreateMode</span>.<span class="type">EPHEMERAL</span>).forPath(ourPath);</span><br><span class="line">boolean <span class="literal">result</span> = (readyPathExists || internalEnter(startMs, hasMaxWait, maxWaitMs));</span><br></pre></td></tr></table></figure>
+<p>  internalEnter方法关键代码：</p>
+  <figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; <span class="built_in">children</span> = getChildrenForEntering<span class="params">()</span>;</span><br><span class="line">int count = <span class="params">(children != null)</span> ? <span class="built_in">children</span>.size<span class="params">()</span> : <span class="number">0</span>;</span><br><span class="line"><span class="keyword">if</span> <span class="params">( count &gt;= memberQty )</span>&#123;</span><br><span class="line">    try &#123;</span><br><span class="line">        client.create<span class="params">()</span>.forPath<span class="params">(readyPath)</span>;</span><br><span class="line">    &#125; catch <span class="params">( KeeperException.NodeExistsException ignore )</span>&#123;</span><br><span class="line">        <span class="comment">// ignore</span></span><br><span class="line">    &#125;</span><br><span class="line">    break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2、<code>leave()</code>离开栏位，获取所有栏位节点即randomUUID的子节点(排除ready子节点)并按自然顺序排序，如果当前离开的栏位在自然排序中排位第一，则为排位最末的栏位节点添加watcher监控。如果当前离开的栏位在自然排序中排位不是第一，则为排位第一的栏位节点添加watcher监控，同时删除当前栏位节点。直到当前离开栏位为最后离开的栏位，删除<code>ready</code>子节点，所有其他栏位的线程获取到通知，唤醒线程，同时离开栏位。</p>
+<p>  关键代码：</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; children = client.getChildren().forPath(barrierPath);</span><br><span class="line">children = filterAndSortChildren(children);</span><br><span class="line"><span class="keyword">int</span> ourIndex = children.indexOf(ourPathName);</span><br><span class="line"><span class="keyword">if</span> ( children.size() == <span class="number">1</span> ) &#123;</span><br><span class="line">  <span class="keyword">if</span> ( ourNodeShouldExist &amp;&amp; !children.get(<span class="number">0</span>).equals(ourPathName) ) &#123;</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> IllegalStateException(String.format(<span class="string">"Last path (%s) is not ours (%s)"</span>, children.get(<span class="number">0</span>), ourPathName));</span><br><span class="line">  &#125;</span><br><span class="line">  client.delete().forPath(ourPath);</span><br><span class="line">  <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">boolean</span> IsLowestNode = (ourIndex == <span class="number">0</span>);</span><br><span class="line"><span class="keyword">if</span> ( IsLowestNode ) &#123;</span><br><span class="line">    String  highestNodePath = ZKPaths.makePath(barrierPath, children.get(children.size() - <span class="number">1</span>));</span><br><span class="line">    stat = client.checkExists().usingWatcher(watcher).forPath(highestNodePath);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    String  lowestNodePath = ZKPaths.makePath(barrierPath, children.get(<span class="number">0</span>));</span><br><span class="line">    stat = client.checkExists().usingWatcher(watcher).forPath(lowestNodePath);</span><br><span class="line">    client.delete().forPath(ourPath);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/10/20/zookeeper客户端框架Curator的leader选举/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/09/10/zookeeper客户端框架Curator分布式锁/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

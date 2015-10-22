@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper访问控制ACL | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper ACL访问控制权限">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper访问控制ACL"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-31T07:41:41.000Z"><a href="/2015/07/31/zookeeper访问控制ACL/">2015-07-31</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper访问控制ACL</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#ACL"><span class="toc-number">1.</span> <span class="toc-text">ACL</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#ACL机制"><span class="toc-number">2.</span> <span class="toc-text">ACL机制</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#代码实现"><span class="toc-number">3.</span> <span class="toc-text">代码实现</span></a></li></ol>
+		</div>
+	
+
+        <p>zookeeper提供了访问控制机制，用来实现多项目多集群共享同一个zookeeper后权限隔离，比如zookeeper下某个节点只允许集群A或项目B来操作，其他人只能查询不能做其他操作，可以有效避免一些误操作。<br><a id="more"></a></p>
+<h1 id="ACL">ACL</h1><p>在zookeeper中，节点的ACL是没有继承关系的，是独立控制的。zookeeper的ACL通常表示为<code>scheme:id:permissions</code>，即分为三个维度，一个是scheme、一个是id、一个是permissions，下面我们会一一介绍</p>
+<h1 id="ACL机制">ACL机制</h1><p>zookeeper的ACL表示为<code>scheme:id:permissions</code></p>
+<p><code>scheme</code>字段：表示采用哪一种机制来进行访问控制</p>
+<p><code>id</code>字段：表示用户</p>
+<p><code>permissions</code>字段：表示相关权限(如只读、读写、管理等)</p>
+<p>下面给出scheme字段可用的可选项：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>world</td>
+<td>表示所有人都可以访问，它下面的id用户只有一个即anyone</td>
+</tr>
+<tr>
+<td>auth</td>
+<td>表示需要通过用户验证，它不需要id，只要是通过验证的用户都有权限</td>
+</tr>
+<tr>
+<td>digest</td>
+<td>表示需要通过用户名密码方式的auth验证，id格式为username:BASE64(SHA1(password))</td>
+</tr>
+<tr>
+<td>ip</td>
+<td>表示需要通过IP校验，id为客户机的IP地址</td>
+</tr>
+<tr>
+<td>super</td>
+<td>表示超级用户，对应的id用户拥有超级权限，可以做任何事情</td>
+</tr>
+</tbody>
+</table>
+<p>下面给出permissions支持的权限</p>
+<table>
+<thead>
+<tr>
+<th>权限</th>
+<th>作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CREATE</td>
+<td>创建权限，可以在当前节点下创建子节点，即create(子节点)</td>
+</tr>
+<tr>
+<td>DELETE</td>
+<td>删除权限，可以删除当前的节点，即delete(子节点)</td>
+</tr>
+<tr>
+<td>READ</td>
+<td>读权限，可以获取当前节点的数据，可以遍历当前节点所有的子节点，即getChildren/getData</td>
+</tr>
+<tr>
+<td>WRITE</td>
+<td>写权限，可以想当前节点写数据，即setData</td>
+</tr>
+<tr>
+<td>ADMIN</td>
+<td>管理权限，可以设置当前node的权限，即setACL</td>
+</tr>
+</tbody>
+</table>
+<h1 id="代码实现">代码实现</h1><p>我们使用curator作为我们的zookeeper客户端，下面的代码都是基于curator做测试</p>
+<ul>
+<li><p>world实现</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aclTestForWorld</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">  RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">  CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder()</span><br><span class="line">      .connectString(zookeeperConnectionString)</span><br><span class="line">      .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">      .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">      .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">      .retryPolicy(retryPolicy);</span><br><span class="line">  CuratorFramework curator = builder.build();</span><br><span class="line">  curator.start();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//设置只允许对本节点GetChildren和GetData操作，需要注意的是此处的没有删除权限是针对它的子节点生效的，而不是它本身，所以你不能修改该节点，但是却可以删除该节点</span></span><br><span class="line">  curator.create().withACL(ZooDefs.Ids.READ_ACL_UNSAFE).forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">  <span class="comment">//获取该节点的值</span></span><br><span class="line">  <span class="keyword">byte</span>[] data = curator.getData().forPath(<span class="string">"/test"</span>);</span><br><span class="line">  Assert.assertEquals(<span class="string">"hello"</span>,<span class="keyword">new</span> String(data));</span><br><span class="line">  </span><br><span class="line">  <span class="comment">//尝试需改该节点的值，ACL会抛出NoAuthException异常</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes());</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"THIS IS NOT MY EXPECTED!"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(e <span class="keyword">instanceof</span> KeeperException.NoAuthException)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">//但是你可以删除该节点</span></span><br><span class="line">  curator.delete().forPath(<span class="string">"/test"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  上例中，我们使用world机制来实现了一个ACL节点，通过<code>ZooDefs.Ids</code>的枚举你可以选择想要的ID，比如<code>ZooDefs.Ids.ANYONE_ID_UNSAFE</code>表示<code>Id(&quot;world&quot;, &quot;anyone&quot;)</code>，<code>ZooDefs.Ids.AUTH_IDS</code>表示<code>Id(&quot;auth&quot;, &quot;&quot;)</code>，<code>ZooDefs.Ids.OPEN_ACL_UNSAFE</code>表示<code>ACL(Perms.ALL, ANYONE_ID_UNSAFE)</code>，<code>ZooDefs.Ids.CREATOR_ALL_ACL</code>表示<code>ACL(Perms.ALL, AUTH_IDS)</code>，<code>ZooDefs.Ids.READ_ACL_UNSAFE</code>表示<code>ACL(Perms.READ, ANYONE_ID_UNSAFE)</code></p>
+</li>
+<li><p>auth实现</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aclTestForAuth</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">  String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">  RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">  CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder()</span><br><span class="line">      .connectString(zookeeperConnectionString)</span><br><span class="line">      .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">      .authorization(<span class="string">"digest"</span>, <span class="string">"admin:manager"</span>.getBytes())<span class="comment">//认证信息</span></span><br><span class="line">      .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">      .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">      .retryPolicy(retryPolicy);</span><br><span class="line">  CuratorFramework curator = builder.build();</span><br><span class="line">  curator.start();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//设置/test节点的权限为只对当前认证用户(即admin:manager)拥有所有权限</span></span><br><span class="line">  ACL acl = <span class="keyword">new</span> ACL(ZooDefs.Perms.ALL, ZooDefs.Ids.AUTH_IDS);</span><br><span class="line">  List&lt;ACL&gt; aclList = Lists.newArrayList(acl);</span><br><span class="line">  curator.create().withACL(aclList).forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">  <span class="comment">//重新设置认证信息重新建立zookeeper连接</span></span><br><span class="line">  curator.close();</span><br><span class="line">  curator = builder.authorization(<span class="string">"digest"</span>, <span class="string">"something:else"</span>.getBytes()).build();</span><br><span class="line">  curator.start();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//尝试修改节点，抛出异常NoAuthException</span></span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    curator.setData().forPath(<span class="string">"/test"</span>,<span class="string">"hello2"</span>.getBytes());</span><br><span class="line">    <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"THIS IS NOT MY EXPECTED!"</span>);</span><br><span class="line">  &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">    <span class="keyword">if</span> (!(e <span class="keyword">instanceof</span> KeeperException.NoAuthException)) &#123;</span><br><span class="line">      <span class="keyword">throw</span> e;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//不影响exists操作</span></span><br><span class="line">  Stat stat = curator.checkExists().forPath(<span class="string">"/test"</span>);</span><br><span class="line">  Assert.assertNotNull(stat);</span><br><span class="line">  <span class="comment">//不影响获取ACL信息</span></span><br><span class="line">  List&lt;ACL&gt; acls = curator.getACL().forPath(<span class="string">"/test"</span>);</span><br><span class="line">  Assert.assertTrue(acls != <span class="keyword">null</span> &amp;&amp; acls.size() == <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//重新设置认证信息重新建立zookeeper连接</span></span><br><span class="line">  curator.close();</span><br><span class="line">  curator = builder.authorization(<span class="string">"digest"</span>, <span class="string">"admin:manager"</span>.getBytes()).build();</span><br><span class="line">  curator.start();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//认证信息通过，可以修改删除该节点</span></span><br><span class="line">  curator.setData().forPath(<span class="string">"/test"</span>,<span class="string">"hello2"</span>.getBytes());</span><br><span class="line">  curator.delete().forPath(<span class="string">"/test"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>  上例中我们通过auth机制，实现了某个节点只对当前通过auth认证的用户拥有对应的权限，其中最重要的代码是<code>ZooDefs.Ids.AUTH_IDS</code>,这个ID表示的就是当前通过验证的用户即admin:manager，当使用其他用户名密码认证建立连接后便无法操作该节点了，但是需要注意的是exists操作和getAcl操作并不受ACL许可控制，因此任何客户端可以查询节点的状态和节点的ACL。</p>
+</li>
+<li><p>digest实现</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> <span class="annotation">@Test</span></span><br><span class="line"> <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aclTestForDigest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">   String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">   RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">   CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder()</span><br><span class="line">       .connectString(zookeeperConnectionString)</span><br><span class="line">       .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">       .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">       .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">       .retryPolicy(retryPolicy);</span><br><span class="line">   CuratorFramework curator = builder.build();</span><br><span class="line">   curator.start();</span><br><span class="line"></span><br><span class="line">   List&lt;ACL&gt; acls = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">   Id id = <span class="keyword">new</span> Id(<span class="string">"digest"</span>, DigestAuthenticationProvider.generateDigest(<span class="string">"admin:manager"</span>));</span><br><span class="line">   ACL acl = <span class="keyword">new</span> ACL(ZooDefs.Perms.ALL,id);</span><br><span class="line">   acls.add(acl);</span><br><span class="line"></span><br><span class="line">   <span class="comment">//创建节点/test，并为test节点赋予ACL权限：只有通过auth验证用户名密码为admin:manager的用户才可以访问</span></span><br><span class="line">   curator.create().withACL(acls).forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">   <span class="comment">//尝试删除节点，因为当前客户端没有认证信息，所以此处会抛出异常org.apache.zookeeper.KeeperException$NoAuthException</span></span><br><span class="line">   <span class="keyword">try</span> &#123;</span><br><span class="line">     curator.delete().forPath(<span class="string">"/test"</span>);</span><br><span class="line">     <span class="keyword">throw</span> <span class="keyword">new</span> RuntimeException(<span class="string">"THIS IS NOT MY EXPECTED!"</span>);</span><br><span class="line">   &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">     <span class="keyword">if</span> (!(e <span class="keyword">instanceof</span> KeeperException.NoAuthException))</span><br><span class="line">       <span class="keyword">throw</span> e;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//客户端重新设置AUTH认证重新建立连接</span></span><br><span class="line">   curator.close();</span><br><span class="line">   builder.authorization(<span class="string">"digest"</span>,<span class="string">"admin:manager"</span>.getBytes());</span><br><span class="line">   <span class="comment">//客户端重新建立连接</span></span><br><span class="line">   curator = builder.build();</span><br><span class="line">   curator.start();</span><br><span class="line"></span><br><span class="line">   <span class="comment">//再次尝试删除节点，成功！</span></span><br><span class="line">   curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>  上例中，我们使用<code>CuratorFrameworkFactory</code>build了一个CuratorFramework，然后新建了个节点<code>/test/test1/test2</code>，这个节点的权限<code>scheme:id:permissions</code>设置为了<code>digest:admin:manager:ALL</code>，ACL机制为digest机制，只有通过用户名密码验证的用户才能查询操作该节点。</p>
+</li>
+<li><p>ip实现</p>
+  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">  <span class="annotation">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">aclTestForIp</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line"></span><br><span class="line">    CuratorFrameworkFactory.Builder builder = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(zookeeperConnectionString)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line"><span class="comment">//        .authorization("ip", "127.0.0.1".getBytes())</span></span><br><span class="line">        .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">        .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">        .retryPolicy(retryPolicy);</span><br><span class="line">    CuratorFramework curator = builder.build();</span><br><span class="line">    curator.start();</span><br><span class="line"></span><br><span class="line">    <span class="comment">//设置/test节点的权限为只对当前本地机器用户拥有所有权限</span></span><br><span class="line">    Id id = <span class="keyword">new</span> Id(<span class="string">"ip"</span>, <span class="string">"127.0.0.1"</span>);</span><br><span class="line">    ACL acl = <span class="keyword">new</span> ACL(ZooDefs.Perms.ALL, id);</span><br><span class="line">    List&lt;ACL&gt; aclList = Lists.newArrayList(acl);</span><br><span class="line">    curator.create().withACL(aclList).forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">    <span class="keyword">byte</span>[] value = curator.getData().forPath(<span class="string">"/test"</span>);</span><br><span class="line">    System.out.println(<span class="keyword">new</span> String(value));</span><br><span class="line">    curator.delete().forPath(<span class="string">"/test"</span>);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>  上例中我们设置了<code>/mytest/test</code>节点ACL为<code>ip:127.0.0.1:cdrwa</code>，只有本地机器可以访问该节点，服务端会校验客户端的真实IP地址，所以无论你如何设置authorization都不能手动修改你的ip地址，IP策略一般在多个集群公用同一个zookeeper服务时非常有效，这样可以在客户端不知情的情况下隔离了集群资源，缺点是可能你需要指定很多IP。</p>
+<p>  在zookeeper最近几个版本中貌似去掉了host策略以及ip段策略，这里就不多介绍这2个策略了，有兴趣的可以研究下较早版本的zookeeper</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/08/24/zookeeper节点状态版本结构/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/07/27/zookeeper客户端框架Curator基础使用/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

@@ -1,0 +1,466 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper客户端框架Curator缓存使用 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper客户端框架Curator缓存使用">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper客户端框架Curator缓存使用"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-08-25T08:22:24.000Z"><a href="/2015/08/25/zookeeper客户端框架Curator缓存使用/">2015-08-25</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper客户端框架Curator缓存使用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#三种缓存方式"><span class="toc-number">1.</span> <span class="toc-text">三种缓存方式</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Node_Cache"><span class="toc-number">2.</span> <span class="toc-text">Node Cache</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Path_Cache"><span class="toc-number">3.</span> <span class="toc-text">Path Cache</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Tree_Cache"><span class="toc-number">4.</span> <span class="toc-text">Tree Cache</span></a></li></ol>
+		</div>
+	
+
+        <p>一般我们在查询zookeeper数据时如果每次都得请求服务器会严重影响我们的系统性能，为了解决集群中每个节点的数据查询，zookeeper提供了缓存功能，本文为你介绍zookeeper提供的三种缓存方式<br><a id="more"></a></p>
+<h1 id="三种缓存方式">三种缓存方式</h1><p>zookeeper使用的缓存类似监听器的功能，你可以设置监听器来监听服务器的数据并同步到本地实现缓存。</p>
+<ul>
+<li>Node Cache<br>  监听一个节点自身的状态变更</li>
+<li>Path Cache<br>  监控一个节点的所有子节点的状态变更</li>
+<li>Tree Cache<br>  监控一个节点自身以及所有子节点的状态变更，你可以看成是上面Node Cache和Path Cache的组合</li>
+</ul>
+<p>你可以根据自己的需要来选择合适缓存类型，下面我们基于curator客户端为大家一一介绍<br>首先添加项目依赖，Cache功能属于Curator-Recipes项目提供的，所以我们除了添加curator-framework依赖外还需要添加curator-recipes依赖才能使用Cache。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-framework<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-recipes<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="Node_Cache">Node Cache</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CuratorCacheTest</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> CuratorFramework curator;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Before</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">    curator = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(zookeeperConnectionString)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">        .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">        .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">        .retryPolicy(retryPolicy)</span><br><span class="line">        .build();</span><br><span class="line">    curator.start();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">nodeCacheTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception </span>&#123;</span><br><span class="line">    CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">    <span class="comment">//先创建一个节点以便监控</span></span><br><span class="line">    curator.create().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line">    <span class="comment">//创建本地Node Cache</span></span><br><span class="line">    NodeCache cache = <span class="keyword">new</span> NodeCache(curator,<span class="string">"/test"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//为缓存设置监听器以便监听节点数据状态变更</span></span><br><span class="line">    cache.getListenable().addListener(() -&gt; &#123;</span><br><span class="line">      <span class="comment">//获取本地缓存数据</span></span><br><span class="line">      ChildData childData = cache.getCurrentData();</span><br><span class="line">      <span class="keyword">if</span> (childData != <span class="keyword">null</span>) &#123;</span><br><span class="line">        System.out.println(<span class="string">"Node changed: "</span> + childData.getPath() + <span class="string">", value: "</span> + <span class="keyword">new</span> String(childData.getData()) + <span class="string">", numChildren: "</span> + childData.getStat().getNumChildren());</span><br><span class="line">      &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"Node deleted"</span>);</span><br><span class="line">        CloseableUtils.closeQuietly(cache);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;);</span><br><span class="line">    cache.start(<span class="keyword">true</span>);</span><br><span class="line">    CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        System.out.println(<span class="string">"###"</span>+cache.getCurrentData());</span><br><span class="line">        System.out.println(<span class="string">"修改节点数据"</span>);</span><br><span class="line">        curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"修改节点权限"</span>);</span><br><span class="line">        curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test"</span>);</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"添加子节点"</span>);</span><br><span class="line">        curator.create().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello2"</span>.getBytes());</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"修改子节点数据"</span>);</span><br><span class="line">        curator.setData().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello3"</span>.getBytes());</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"删除子节点"</span>);</span><br><span class="line">        curator.delete().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"删除节点"</span>);</span><br><span class="line">        curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"完成"</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).whenComplete((aVoid, throwable) -&gt; countDownLatch.countDown());</span><br><span class="line">    countDownLatch.await();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们监控了/test节点，执行<code>nodeCacheTest</code>测试输出如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">###ChildData&#123;path=&#39;/test&#39;, stat=9417,9417,1440749490556,1440749490556,0,0,0,0,2,0,9417&#10;, data=[104, 105]&#125;&#10;&#20462;&#25913;&#33410;&#28857;&#25968;&#25454;&#10;Node changed: /test, value: hello, numChildren: 0&#10;&#20462;&#25913;&#33410;&#28857;&#26435;&#38480;&#10;&#28155;&#21152;&#23376;&#33410;&#28857;&#10;&#20462;&#25913;&#23376;&#33410;&#28857;&#25968;&#25454;&#10;&#21024;&#38500;&#23376;&#33410;&#28857;&#10;&#21024;&#38500;&#33410;&#28857;&#10;Node deleted&#10;&#23436;&#25104;</span><br></pre></td></tr></table></figure>
+<p>从结果中我们可以发现</p>
+<p>1、只有修改节点数据和删除节点才会触发监听器，修改节点ACL权限、变更子节点列表和子节点数据、删除子节点都不会触发监听器</p>
+<p>2、<code>cache.start(true)</code>会初始化本地缓存，否则只有当监听器触发才会初始化本地缓存，上面测试代码如果使用<code>cache.start()</code>后console输出第一行###ChildData会为null</p>
+<h1 id="Path_Cache">Path Cache</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">pathCacheTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">  <span class="comment">//先创建一个节点和子节点以便监控测试</span></span><br><span class="line">  curator.create().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line">  PathChildrenCache cache = <span class="keyword">new</span> PathChildrenCache(curator,<span class="string">"/test"</span>,<span class="keyword">true</span>);</span><br><span class="line"></span><br><span class="line">  cache.getListenable().addListener((client, event) -&gt; &#123;</span><br><span class="line">    PathChildrenCacheEvent.Type type = event.getType();</span><br><span class="line">    List&lt;ChildData&gt; childDataList = cache.getCurrentData();</span><br><span class="line">    <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZED:</span><br><span class="line">        System.out.println(<span class="string">"初始化完成："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CHILD_ADDED:</span><br><span class="line">        System.out.print(<span class="string">"添加子节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CHILD_REMOVED:</span><br><span class="line">        System.out.print(<span class="string">"删除子节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CHILD_UPDATED:</span><br><span class="line">        System.out.print(<span class="string">"修改子节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_LOST:</span><br><span class="line">        System.out.println(<span class="string">"连接丢失事件..."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_RECONNECTED:</span><br><span class="line">        System.out.println(<span class="string">"连接重连事件..."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_SUSPENDED:</span><br><span class="line">        System.out.println(<span class="string">"连接中断事件..."</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    childDataList.forEach(childData -&gt; System.out.println(childData.getPath() + <span class="string">"--&gt;"</span> + <span class="keyword">new</span> String(childData.getData())));</span><br><span class="line">  &#125;);</span><br><span class="line">  cache.start(PathChildrenCache.StartMode.POST_INITIALIZED_EVENT);</span><br><span class="line"></span><br><span class="line">  CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改节点数据"</span>);</span><br><span class="line">      curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"添加子节点"</span>);</span><br><span class="line">      curator.create().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello2"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改子节点数据"</span>);</span><br><span class="line">      curator.setData().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello3"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改子节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"删除子节点"</span>);</span><br><span class="line">      curator.delete().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"删除节点"</span>);</span><br><span class="line">      curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"完成"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).whenComplete((aVoid, throwable) -&gt; countDownLatch.countDown());</span><br><span class="line">  countDownLatch.await();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们监控了/test节点，执行<code>pathCacheTest</code>测试输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">初始化完成：</span><br><span class="line">修改节点数据</span><br><span class="line">修改节点权限</span><br><span class="line">添加子节点</span><br><span class="line">添加子节点事件：/<span class="built_in">test</span>/<span class="built_in">test</span>1--&gt;hello2</span><br><span class="line">修改子节点数据</span><br><span class="line">修改子节点事件：/<span class="built_in">test</span>/<span class="built_in">test</span>1--&gt;hello3</span><br><span class="line">修改子节点权限</span><br><span class="line">删除子节点</span><br><span class="line">删除子节点事件：删除节点</span><br><span class="line">完成</span><br></pre></td></tr></table></figure>
+<p>从结果中我们可以发现</p>
+<p>1、只有添加、删除子节点和修改子节点数据才会触发监听器，对父节点的操作不会触发监听器，对子节点的权限修改也不会触发。</p>
+<p>2、<code>cache.start(PathChildrenCache.StartMode.POST_INITIALIZED_EVENT);</code>会在本地cache初始化后会同步远程数据并发送一个<code>INITIALIZED</code>事件告知监听器，除了<code>POST_INITIALIZED_EVENT</code>模式启动还有<code>NORMAL</code>，该模式启动本地cache初始化后不会同步远程数据，<code>BUILD_INITIAL_CACHE</code>这个模式启动本地cache初始化后会同步远程数据，但不会发送<code>INITIALIZED</code>事件通知监听器</p>
+<h1 id="Tree_Cache">Tree Cache</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">treeCacheTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">  curator.create().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line"></span><br><span class="line">  TreeCache cache = <span class="keyword">new</span> TreeCache(curator,<span class="string">"/test"</span>);</span><br><span class="line">  cache.getListenable().addListener((client, event) -&gt; &#123;</span><br><span class="line">    TreeCacheEvent.Type type = event.getType();</span><br><span class="line">    ChildData childData = event.getData();</span><br><span class="line">    <span class="keyword">switch</span> (type) &#123;</span><br><span class="line">      <span class="keyword">case</span> INITIALIZED:</span><br><span class="line">        System.out.println(<span class="string">"初始化完成事件"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> NODE_ADDED:</span><br><span class="line">        System.out.print(<span class="string">"添加节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> NODE_REMOVED:</span><br><span class="line">        System.out.print(<span class="string">"删除节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> NODE_UPDATED:</span><br><span class="line">        System.out.print(<span class="string">"修改节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_LOST:</span><br><span class="line">        System.out.println(<span class="string">"连接丢失事件"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_RECONNECTED:</span><br><span class="line">        System.out.println(<span class="string">"连接重连事件"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CONNECTION_SUSPENDED:</span><br><span class="line">        System.out.println(<span class="string">"连接中断事件"</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (childData != <span class="keyword">null</span>) System.out.println(childData.toString());</span><br><span class="line">    Map&lt;String,ChildData&gt; childDataMap = cache.getCurrentChildren(<span class="string">"/test"</span>);</span><br><span class="line">    <span class="keyword">if</span> (childDataMap != <span class="keyword">null</span> &amp;&amp; childDataMap.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">      System.out.print(<span class="string">"缓存信息："</span>);</span><br><span class="line">      childDataMap.forEach((key, value) -&gt; System.out.print(key + <span class="string">"---&gt;"</span> + value.getPath() + <span class="string">"-&gt;"</span> + <span class="keyword">new</span> String(value.getData()) + <span class="string">"\t"</span>));</span><br><span class="line">      System.out.println();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  cache.start();</span><br><span class="line"></span><br><span class="line">  CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改节点数据"</span>);</span><br><span class="line">      curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"添加子节点"</span>);</span><br><span class="line">      curator.create().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello2"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改子节点数据"</span>);</span><br><span class="line">      curator.setData().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello3"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"修改子节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"添加子节点"</span>);</span><br><span class="line">      curator.create().forPath(<span class="string">"/test/test2"</span>, <span class="string">"hello4"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"删除子节点"</span>);</span><br><span class="line">      curator.delete().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"删除节点"</span>);</span><br><span class="line">      curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"完成"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).whenComplete((aVoid, throwable) -&gt; countDownLatch.countDown());</span><br><span class="line">  countDownLatch.await();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们监控了/test节点，执行<code>treeCacheTest</code>测试输出如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">添加节点事件：ChildData&#123;path=<span class="string">'/test'</span>, <span class="built_in">stat</span>=<span class="number">9664</span>,<span class="number">9664</span>,<span class="number">1441508868969</span>,<span class="number">1441508868969</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">2</span>,<span class="number">0</span>,<span class="number">9664</span></span><br><span class="line">, data=[<span class="number">104</span>, <span class="number">105</span>]&#125;</span><br><span class="line">初始化完成事件</span><br><span class="line">修改节点数据</span><br><span class="line">修改节点事件：ChildData&#123;path=<span class="string">'/test'</span>, <span class="built_in">stat</span>=<span class="number">9664</span>,<span class="number">9665</span>,<span class="number">1441508868969</span>,<span class="number">1441508870996</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">9664</span></span><br><span class="line">, data=[<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>]&#125;</span><br><span class="line">修改节点权限</span><br><span class="line">添加子节点</span><br><span class="line">添加节点事件：ChildData&#123;path=<span class="string">'/test/test1'</span>, <span class="built_in">stat</span>=<span class="number">9667</span>,<span class="number">9667</span>,<span class="number">1441508875016</span>,<span class="number">1441508875016</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9667</span></span><br><span class="line">, data=[<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">50</span>]&#125;</span><br><span class="line">缓存信息：<span class="built_in">test</span>1---&gt;/<span class="built_in">test</span>/<span class="built_in">test</span>1-&gt;hello2	</span><br><span class="line">修改子节点数据</span><br><span class="line">修改节点事件：ChildData&#123;path=<span class="string">'/test/test1'</span>, <span class="built_in">stat</span>=<span class="number">9667</span>,<span class="number">9668</span>,<span class="number">1441508875016</span>,<span class="number">1441508877022</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9667</span></span><br><span class="line">, data=[<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">51</span>]&#125;</span><br><span class="line">缓存信息：<span class="built_in">test</span>1---&gt;/<span class="built_in">test</span>/<span class="built_in">test</span>1-&gt;hello3	</span><br><span class="line">修改子节点权限</span><br><span class="line">添加子节点</span><br><span class="line">添加节点事件：ChildData&#123;path=<span class="string">'/test/test2'</span>, <span class="built_in">stat</span>=<span class="number">9670</span>,<span class="number">9670</span>,<span class="number">1441508881033</span>,<span class="number">1441508881033</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9670</span></span><br><span class="line">, data=[<span class="number">104</span>, <span class="number">101</span>, <span class="number">108</span>, <span class="number">108</span>, <span class="number">111</span>, <span class="number">52</span>]&#125;</span><br><span class="line">缓存信息：<span class="built_in">test</span>1---&gt;/<span class="built_in">test</span>/<span class="built_in">test</span>1-&gt;hello3	<span class="built_in">test</span>2---&gt;/<span class="built_in">test</span>/<span class="built_in">test</span>2-&gt;hello4	</span><br><span class="line">删除子节点</span><br><span class="line">删除节点事件：ChildData&#123;path=<span class="string">'/test/test1'</span>, <span class="built_in">stat</span>=null, data=null&#125;</span><br><span class="line">缓存信息：<span class="built_in">test</span>2---&gt;/<span class="built_in">test</span>/<span class="built_in">test</span>2-&gt;hello4	</span><br><span class="line">删除节点</span><br><span class="line">删除节点事件：ChildData&#123;path=<span class="string">'/test/test2'</span>, <span class="built_in">stat</span>=null, data=null&#125;</span><br><span class="line">删除节点事件：ChildData&#123;path=<span class="string">'/test'</span>, <span class="built_in">stat</span>=null, data=null&#125;</span><br><span class="line">完成</span><br></pre></td></tr></table></figure>
+<p>从结果中我们可以发现</p>
+<p>1、节点和子节点的添加、数据修改、删除都会触发监听器，而修改节点和子节点的访问权限无法触发监听器。</p>
+<p>2、在cache初始化后会发送一个<code>INITIALIZED</code>事件，表示本地缓存已经初始化完成</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/09/06/zookeeper客户端框架Curator监听器使用/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/08/24/zookeeper节点状态版本结构/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

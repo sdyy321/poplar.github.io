@@ -1,0 +1,540 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper客户端框架Curator基础使用 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper客户端框架curator基本操作使用">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper客户端框架Curator基础使用"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-07-27T03:32:27.000Z"><a href="/2015/07/27/zookeeper客户端框架Curator基础使用/">2015-07-27</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper客户端框架Curator基础使用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#添加依赖"><span class="toc-number">2.</span> <span class="toc-text">添加依赖</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#获取zookeeper连接"><span class="toc-number">3.</span> <span class="toc-text">获取zookeeper连接</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#zk操作"><span class="toc-number">4.</span> <span class="toc-text">zk操作</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#新建节点"><span class="toc-number">4.1.</span> <span class="toc-text">新建节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#删除节点"><span class="toc-number">4.2.</span> <span class="toc-text">删除节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修改节点"><span class="toc-number">4.3.</span> <span class="toc-text">修改节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#检查节点是否存在"><span class="toc-number">4.4.</span> <span class="toc-text">检查节点是否存在</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询节点"><span class="toc-number">4.5.</span> <span class="toc-text">查询节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查询子节点"><span class="toc-number">4.6.</span> <span class="toc-text">查询子节点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#设置访问控制权限"><span class="toc-number">4.7.</span> <span class="toc-text">设置访问控制权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#获取访问控制权限"><span class="toc-number">4.8.</span> <span class="toc-text">获取访问控制权限</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#节点视图同步"><span class="toc-number">4.9.</span> <span class="toc-text">节点视图同步</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事务操作"><span class="toc-number">4.10.</span> <span class="toc-text">事务操作</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#临时连接"><span class="toc-number">5.</span> <span class="toc-text">临时连接</span></a></li></ol>
+		</div>
+	
+
+        <p>传送门：<a href="http://curator.apache.org/index.html" target="_blank" rel="external">官方文档</a>、<a href="https://github.com/apache/curator" target="_blank" rel="external">源码</a><br><a id="more"></a></p>
+<h1 id="准备工作">准备工作</h1><p>安装zookeeper，如果你对zookeeper还不了解，可以进入此<a href="http://zookeeper.apache.org/doc/trunk/zookeeperStarted.html" target="_blank" rel="external">传送门</a></p>
+<p>启动zookeeper服务后，确认本地2181端口可以访问</p>
+<h1 id="添加依赖">添加依赖</h1><p>curator框架有好几个组件，分别是<a href="http://curator.apache.org/curator-recipes/index.html" target="_blank" rel="external">Recipes</a>、<a href="http://curator.apache.org/curator-framework/index.html" target="_blank" rel="external">Framework</a>、<a href="http://curator.apache.org/utilities.html" target="_blank" rel="external">Utilities</a>、<a href="http://curator.apache.org/curator-client/index.html" target="_blank" rel="external">Client</a>、<a href="http://curator.apache.org/errors.html" target="_blank" rel="external">Errors</a>、Extensions</p>
+<p>我们先暂时使用框架里的Framework组件，添加这个组件依赖</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- zookeeper client --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="title">dependency</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">groupId</span>&gt;</span>org.apache.curator<span class="tag">&lt;/<span class="title">groupId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">artifactId</span>&gt;</span>curator-framework<span class="tag">&lt;/<span class="title">artifactId</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="title">version</span>&gt;</span>2.8.0<span class="tag">&lt;/<span class="title">version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="title">dependency</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h1 id="获取zookeeper连接">获取zookeeper连接</h1><p>Curator api使用的是流式风格即<a href="https://en.wikipedia.org/wiki/Fluent_interface#Java" target="_blank" rel="external">Fulent Style</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">CuratorFramework client = CuratorFrameworkFactory.newClient(zookeeperConnectionString, retryPolicy);</span><br><span class="line">client.start();</span><br></pre></td></tr></table></figure>
+<p>首先创建一个CuratorFramework需要重试策略，上例中<code>ExponentialBackoffRetry(1000, 3)</code>1000表示重试间隔时间基数，3表示重试次数</p>
+<p>CuratorFramework是线程安全的，你应该在应用中共享同一个CuratorFramework实例，上例中我们通过CuratorFrameworkFactory以工厂模式创建了一个CuratorFramework实例</p>
+<p>除了以工厂模式来简单的创建CuratorFramework实例，你还可以通过builder模式来构建，它可以提供更多的参数控制：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">CuratorFramework curator = CuratorFrameworkFactory.builder()</span><br><span class="line">    .connectString(zookeeperConnectionString)</span><br><span class="line">    .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">    .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">    .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">    .retryPolicy(retryPolicy)</span><br><span class="line">    .build();</span><br><span class="line">curator.start();</span><br></pre></td></tr></table></figure>
+<p>你可以使用命名空间Namespace避免多个应用的节点的名称冲突。</p>
+<p>CuratorFramework提供了命名空间的概念，这样CuratorFramework会为它的API调用的path加上命名空间。</p>
+<p>一旦你创建了一个CuratorFramework实例，你必须调用它的<code>start()</code>启动，在应用退出时调用<code>close()</code>来关闭连接</p>
+<h1 id="zk操作">zk操作</h1><h2 id="新建节点">新建节点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.create().forPath(<span class="string">"/test"</span>,<span class="string">"hello"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>create()</code>可以根据路径创建节点，path路径必须以<code>/</code>开头，如果路径上某个父节点不存在则会抛出<code>org.apache.zookeeper.KeeperException$NoNodeException</code>异常，如果最终的节点已经存在则会抛出<code>org.apache.zookeeper.KeeperException$NodeExistsException</code>异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.create().creatingParentsIfNeeded().forPath(<span class="string">"/test/test1/test2"</span>,<span class="string">"hello"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>creatingParentsIfNeeded()</code>在创建节点的时候如果某父节点不存在则会自动为你创建，这样就避免了<code>NoNodeException</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.create().creatingParentsIfNeeded().withProtection().withMode(CreateMode.PERSISTENT).forPath(<span class="string">"/test/test1/test2"</span>,<span class="string">"hello"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>withProtection().withMode(CreateMode.PERSISTENT)</code>可以指定要创建的节点类型，具体有哪些类型可以参考CreateMode里的枚举类型</p>
+<blockquote>
+<pre><code>-<span class="ruby"> <span class="constant">PERSISTENT</span><span class="symbol">:</span>持久化节点,当回话失效后节点任然存在，直到有删除操作来主动清除这个节点
+</span>-<span class="ruby"> <span class="constant">PERSISTENT_SEQUENTIAL</span>：持久化时序节点，父节点会记录每个子节点创建的先后顺序，会自动为给定节点后加上一个数字后缀，例如当创建/test/test1/test2节点时，会生成/test/test1/_c_1545bd6f-<span class="number">21</span>b2-<span class="number">4</span>ed8-<span class="number">8226</span>-b633c9226214-test20000000001节点
+</span>-<span class="ruby"> <span class="constant">EPHEMERAL</span>：临时节点，当会话失效后会被清除掉
+</span>-<span class="ruby"> <span class="constant">EPHEMERAL_SEQUENTIAL</span>：临时时序节点，当会话失效后会被清除掉，父节点会记录每个子节点创建的先后顺序，会自动为给定节点后加上一个数字后缀</span>
+</code></pre></blockquote>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">List&lt;ACL&gt; acls = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">Id id = <span class="keyword">new</span> Id(<span class="string">"digest"</span>, DigestAuthenticationProvider.generateDigest(<span class="string">"admin:manager"</span>));</span><br><span class="line">ACL acl = <span class="keyword">new</span> ACL(ZooDefs.Perms.ALL,id);</span><br><span class="line">acls.add(acl);</span><br><span class="line">curator.create().creatingParentsIfNeeded().withProtection().withMode(CreateMode.PERSISTENT).withACL(acls).forPath(<span class="string">"/test/test1/test2"</span>,<span class="string">"hello"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>withACL(acls)</code>在创建节点的时候可以设置当前节点的访问控制权限，如果你还不了解zookeeper的acl，可以移步至这篇<a href="sdyy321.github.io/2015/07/31/zookeeper访问控制ACL">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.create().creatingParentsIfNeeded().withProtection().withMode(CreateMode.PERSISTENT).withACL(acls).inBackground().forPath(<span class="string">"/test/test1/test2"</span>,<span class="string">"hello"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你的操作在后台异步运行，避免阻塞，比较合适查询操作，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="删除节点">删除节点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.delete().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>delete()</code>可以删除指定的节点，但是如果删除的节点包含子节点则会抛出异<code>org.apache.zookeeper.KeeperException$NotEmptyException</code>，如果指定的节点不存在则会抛出异常<code>org.apache.zookeeper.KeeperException$NoNodeException</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>deletingChildrenIfNeeded()</code>可以删除指定节点，如果该节点包含子节点也会一并删除，这样就会避免出现<code>NotEmptyException</code>异常</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.delete().deletingChildrenIfNeeded().withVersion(-<span class="number">1</span>).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>withVersion(-1)</code>可以让你删除指定版本的节点，-1表示匹配所有版本的节点，如果你对节点的版本状态还不太了解，可以移步至这篇<a href="sdyy321.github.io/2015/08/24/zookeeper节点状态版本结构">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.delete().deletingChildrenIfNeeded().withVersion(-<span class="number">1</span>).inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.delete().guaranteed().deletingChildrenIfNeeded().withVersion(-<span class="number">1</span>).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>guaranteed()</code>可以保证你一定删除节点，比如当连接失败节点无法删除，使用guaranteed()curator可以帮你在连接重连后继续删除指定的节点，保证你的节点不会因为连接异常无法删除，这对实现分布式锁非常有效。</p>
+<p><code>inBackground()</code>可以让你在后端异步执行删除指定的节点，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="修改节点">修改节点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>setData()</code>可以修改指定的节点数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setData().withVersion(-<span class="number">1</span>).forPath(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>withVersion(-1)</code>可以修改指定版本的节点数据，-1表示匹配所有版本的节点，如果你对节点的版本状态还不太了解，可以移步至这篇<a href="sdyy321.github.io/2015/08/24/zookeeper节点状态版本结构">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setData().compressed().withVersion(-<span class="number">1</span>).forPath(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>compressed()</code>可以GZIP压缩数据的方式来修改指定的节点数据，压缩数据后你可以使用<code>getData().decompressed()</code>来获取解压缩后的数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setData().compressed().withVersion(-<span class="number">1</span>).inBackground().forPath(<span class="string">"/test"</span>, <span class="string">"hello2"</span>.getBytes());</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你在后端异步执行修改指定的节点数据，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="检查节点是否存在">检查节点是否存在</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = curator.checkExists().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>checkExists()</code>可以检查指定节点是否存在，若不存在则返回的stat为空.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = curator.checkExists().watched().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>watched()</code>可以检查指定节点是否存在，同时为指定的节点添加一次性监控，当节点变更会在<code>CuratorListener</code>中收到通知，如果你对curator监听器还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/09/06/zookeeper客户端框架Curator监听器使用">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = curator.checkExists().usingWatcher((CuratorWatcher) event -&gt; &#123;</span><br><span class="line">  System.out.println(<span class="string">"node is changed"</span>);</span><br><span class="line">&#125;).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>usingWatcher()</code>可以检查指定节点是否存在，同时为指定的节点添加自定义的一次性监控，当节点变更会收到相应的事件通知</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.checkExists().inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你在后端异步执行检查指定的节点是否存在，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="查询节点">查询节点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] bytes = curator.getData().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>getData()</code>可以查询指定节点的数据</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">byte</span>[] bytes = curator.getData().decompressed().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>decompressed()</code>可以解压缩指定的节点数据，如果数据没有被压缩，会抛出异常<code>java.util.zip.ZipException: Not in GZIP format</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = <span class="keyword">new</span> Stat();</span><br><span class="line"><span class="keyword">byte</span>[] bytes = curator.getData().decompressed().storingStatIn(stat).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>storingStatIn(stat)</code>可以查询指定的节点数据，同时将节点状态同步到指定的Stat对象中，如果你对节点数据状态Stat还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/08/24/zookeeper节点状态版本结构">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.getData().watched().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>watched()</code>可以查询指定的节点数据，同时为指定的节点添加一次性监控，当节点变更会在<code>CuratorListener</code>中收到通知，如果你对curator监听器还不了解，可以移步<a href="sdyy321.github.io/2015/09/06/zookeeper客户端框架Curator监听器使用">这里</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curator.getData().usingWatcher((CuratorWatcher) event -&gt; &#123;</span><br><span class="line">  System.out.println(event.getType().name());</span><br><span class="line">  System.out.println(<span class="string">"node is changed"</span>);</span><br><span class="line">&#125;).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>usingWatcher()</code>可以获取指定的节点数据，同时为指定的节点添加自定义的一次性监控，当节点变更会收到相应的事件通知</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.getData().inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你在后端异步执行获取节点状态，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="查询子节点">查询子节点</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; children = curator.getChildren().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>getChildren()</code>可以查询指定节点所有的子节点列表，如果当前节点不存在则会抛出<code>org.apache.zookeeper.KeeperException$NoNodeException</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; children = curator.getChildren().watched().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>watched()</code>可以查询指定节点所有的子节点列表，同时为指定的节点添加一次性监控，当节点的子节点列表变更会在<code>CuratorListener</code>中收到通知，如果你对curator监听器还不了解，可以移步<a href="sdyy321.github.io/2015/09/06/zookeeper客户端框架Curator监听器使用">这里</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">List&lt;String&gt; children = curator.getChildren().usingWatcher((CuratorWatcher) event -&gt; &#123;</span><br><span class="line">  System.out.println(<span class="string">"node is changed"</span>);</span><br><span class="line">&#125;).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>usingWatcher()</code>可以查询指定节点的所有的子节点列表，同时为指定的节点添加自定义的一次性监控，当节点的子节点列表变更会收到相应的事件通知</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = <span class="keyword">new</span> Stat();</span><br><span class="line">List&lt;String&gt; children = curator.getChildren().storingStatIn(stat).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>storingStatIn(stat)</code>可以查询指定的节点下的所有子节点列表，同时将节点状态同步到指定的Stat对象中，如果你对节点数据状态Stat还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/08/24/zookeeper节点状态版本结构">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.getChildren().inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你在后端异步获取指定节点所有的子节点列表，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="设置访问控制权限">设置访问控制权限</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>setACL()</code>可以设置指定节点的访问控制权限，<code>withACL</code>可以设置想要的权限列表，如果你对访问控制权限ACL还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/07/31/zookeeper访问控制ACL">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setACL().withVersion(-<span class="number">1</span>).withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>withVersion(-1)</code>可以对指定版本的节点修改权限，-1表示匹配所有最新版本，如果你对节点版本还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/07/31/zookeeper访问控制ACL">博客</a></p>
+<figure class="highlight openscad"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.setACL<span class="params">()</span>.withVersion<span class="params">(-<span class="number">1</span>)</span>.withACL<span class="params">(ZooDefs.Ids.OPEN_ACL_UNSAFE)</span>.inBackground<span class="params">()</span>.forPath<span class="params">(<span class="string">"/test"</span>)</span>;</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你以后台异步方式来设置指定节点的访问权限，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="获取访问控制权限">获取访问控制权限</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;ACL&gt; acls = curator.getACL().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>getACL()</code>可以获取指定节点的访问控制权限列表，上面如果你设置的权限为<code>ZooDefs.Ids.OPEN_ACL_UNSAFE</code>则，获取后的ACL为</p>
+<figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="list">[<span class="keyword">31</span>,s&#123;<span class="variable">'world</span>,<span class="variable">'anyone</span>&#125;</span><br><span class="line">]</span></span><br></pre></td></tr></table></figure>
+<p>如果你对访问控制权限ACL还不了解，你可以异步至这篇博客<a href=""></a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Stat stat = <span class="keyword">new</span> Stat();</span><br><span class="line">List&lt;ACL&gt; acls = curator.getACL().storingStatIn(stat).forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>storingStatIn(stat)</code>可以查询指定的节点访问控制权限列表，同时将节点状态同步到指定的Stat对象中，如果你对节点数据状态Stat还不了解，可以移步至这篇<a href="sdyy321.github.io/2015/08/24/zookeeper节点状态版本结构">博客</a></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">List&lt;ACL&gt; acls = curator.getACL().inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你以后台异步方式来获取指定节点的访问权限列表，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="节点视图同步">节点视图同步</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.sync().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>sync()</code>可以让你将客户端的节点视图和zookeeper同步，这在并发时非常有效，因为zookeeper不保证修改在多个服务器之间同步发生，但由于网络延时等原因，Zookeeper不能保证两个客户端能同时得到刚更新的数据，如果需要最新数据，应该在读数据之前调用sync()接口，从而达到并发一致性。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curator.sync().inBackground().forPath(<span class="string">"/test"</span>);</span><br></pre></td></tr></table></figure>
+<p><code>inBackground()</code>可以让你以后台异步方式来同步视图，如果你设置了<code>CuratorListener</code>，该操作会触发相应的操作事件通知。</p>
+<h2 id="事务操作">事务操作</h2><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Collection&lt;CuratorTransactionResult&gt; results = curator.inTransaction().create().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes())</span><br><span class="line">.and().setData().forPath(<span class="string">"/test2"</span>, <span class="string">"hello2"</span>.getBytes())</span><br><span class="line">.and().delete().forPath(<span class="string">"/test3"</span>)</span><br><span class="line">.and().commit(); <span class="comment">// IMPORTANT!</span></span><br><span class="line"><span class="comment">// called</span></span><br><span class="line"><span class="keyword">for</span> (CuratorTransactionResult result : results) &#123;</span><br><span class="line">  System.out.println(result.getForPath() + <span class="string">" - "</span> + result.getType());</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><code>inTransaction()</code>可以将一组操作放在一个原子事务中，每个操作以<code>and()</code>连接，最终以<code>commit()</code>提交结束，事务操作返回一个CuratorTransactionResult的Collection，你可以遍历事务中操作的内容。</p>
+<h1 id="临时连接">临时连接</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CuratorTempFramework curatorTempFramework = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(<span class="string">"localhost"</span>)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">        .retryPolicy(<span class="keyword">new</span> RetryOneTime(<span class="number">1</span>))</span><br><span class="line">        .buildTemp(<span class="number">1</span>, TimeUnit.SECONDS);</span><br></pre></td></tr></table></figure>
+<p>Curator提供了临时的CuratorFramework，一定时间不活动后连接会被关闭。通过调用<code>buildTemp()</code>来构建临时连接，该临时连接默认3分钟不活动就会被关闭，你也可以调用<code>buildTemp(1, TimeUnit.SECONDS)</code>来指定不活动的时间，它只提供<code>inTransaction()</code>、<code>getData()</code>和<code>close()</code>这三个API</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/07/31/zookeeper访问控制ACL/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/07/17/metrics使用/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->

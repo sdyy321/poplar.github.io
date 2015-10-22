@@ -1,0 +1,463 @@
+
+
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>zookeeper客户端框架Curator监听器使用 | 神在在</title>
+  <meta name="author" content="poplar">
+  
+  <meta name="description" content="zookeeper客户端框架Curator监听器使用">
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <meta property="og:title" content="zookeeper客户端框架Curator监听器使用"/>
+  <meta property="og:site_name" content="神在在"/>
+
+  
+    <meta property="og:image" content="undefined"/>
+  
+
+  <link href="/favicon.ico" rel="icon" type="image/x-ico">
+  <link rel="alternate" href="/atom.xml" title="神在在" type="application/atom+xml">
+  <link rel="stylesheet" href="/css/style.css" media="screen" type="text/css">
+  <!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+  <script src="//libs.baidu.com/jquery/1.8.0/jquery.min.js"></script>
+</head>
+
+
+<body>
+  <header id="header" class="inner">
+<div class="alignleft">
+  <h1><a href="/">神在在</a></h1>
+  <h2><a href="/">人生安有十胜哉，有起有落神在在</a></h2>
+</div>
+<nav id="main-nav" class="alignright">
+  <ul>
+    
+      <li><a href="/">首页</a></li>
+    
+      <li><a href="/archives">归档</a></li>
+    
+      <li><a href="/about">关于</a></li>
+    
+	<li> <a href="/atom.xml">RSS</a> </li>
+<li> <a title="把这个链接拖到你的Chrome收藏夹工具栏中" href='javascript:(function() {
+	function c() {
+		var e = document.createElement("link");
+		e.setAttribute("type", "text/css");
+		e.setAttribute("rel", "stylesheet");
+		e.setAttribute("href", f);
+		e.setAttribute("class", l);
+		document.body.appendChild(e)
+	}
+ 
+	function h() {
+		var e = document.getElementsByClassName(l);
+		for (var t = 0; t < e.length; t++) {
+			document.body.removeChild(e[t])
+		}
+	}
+ 
+	function p() {
+		var e = document.createElement("div");
+		e.setAttribute("class", a);
+		document.body.appendChild(e);
+		setTimeout(function() {
+			document.body.removeChild(e)
+		}, 100)
+	}
+ 
+	function d(e) {
+		return {
+			height : e.offsetHeight,
+			width : e.offsetWidth
+		}
+	}
+ 
+	function v(i) {
+		var s = d(i);
+		return s.height > e && s.height < n && s.width > t && s.width < r
+	}
+ 
+	function m(e) {
+		var t = e;
+		var n = 0;
+		while (!!t) {
+			n += t.offsetTop;
+			t = t.offsetParent
+		}
+		return n
+	}
+ 
+	function g() {
+		var e = document.documentElement;
+		if (!!window.innerWidth) {
+			return window.innerHeight
+		} else if (e && !isNaN(e.clientHeight)) {
+			return e.clientHeight
+		}
+		return 0
+	}
+ 
+	function y() {
+		if (window.pageYOffset) {
+			return window.pageYOffset
+		}
+		return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+	}
+ 
+	function E(e) {
+		var t = m(e);
+		return t >= w && t <= b + w
+	}
+ 
+	function S() {
+		var e = document.createElement("audio");
+		e.setAttribute("class", l);
+		e.src = i;
+		e.loop = false;
+		e.addEventListener("canplay", function() {
+			setTimeout(function() {
+				x(k)
+			}, 500);
+			setTimeout(function() {
+				N();
+				p();
+				for (var e = 0; e < O.length; e++) {
+					T(O[e])
+				}
+			}, 15500)
+		}, true);
+		e.addEventListener("ended", function() {
+			N();
+			h()
+		}, true);
+		e.innerHTML = " <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>";
+		document.body.appendChild(e);
+		e.play()
+	}
+ 
+	function x(e) {
+		e.className += " " + s + " " + o
+	}
+ 
+	function T(e) {
+		e.className += " " + s + " " + u[Math.floor(Math.random() * u.length)]
+	}
+ 
+	function N() {
+		var e = document.getElementsByClassName(s);
+		var t = new RegExp("\\b" + s + "\\b");
+		for (var n = 0; n < e.length; ) {
+			e[n].className = e[n].className.replace(t, "")
+		}
+	}
+ 
+	var e = 30;
+	var t = 30;
+	var n = 350;
+	var r = 350;
+	var i = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3";
+	var s = "mw-harlem_shake_me";
+	var o = "im_first";
+	var u = ["im_drunk", "im_baked", "im_trippin", "im_blown"];
+	var a = "mw-strobe_light";
+	var f = "//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css";
+	var l = "mw_added_css";
+	var b = g();
+	var w = y();
+	var C = document.getElementsByTagName("*");
+	var k = null;
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			if (E(A)) {
+				k = A;
+				break
+			}
+		}
+	}
+	if (A === null) {
+		console.warn("Could not find a node of the right size. Please try a different page.");
+		return
+	}
+	c();
+	S();
+	var O = [];
+	for (var L = 0; L < C.length; L++) {
+		var A = C[L];
+		if (v(A)) {
+			O.push(A)
+		}
+	}
+})()    '>High一下</a> </li>
+
+  </ul>
+  <div class="clearfix"></div>
+</nav>
+<div class="clearfix"></div></header>
+  <div id="content" class="inner">
+    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+  
+    <div class="gallery">
+  <div class="photoset">
+    
+      <img src="">
+    
+  </div>
+  <div class="control">
+    <div class="prev"></div>
+    <div class="next"></div>
+  </div>
+</div>
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2015-09-06T06:12:52.000Z"><a href="/2015/09/06/zookeeper客户端框架Curator监听器使用/">2015-09-06</a></time>
+      
+      
+  
+    <h1 class="title">zookeeper客户端框架Curator监听器使用</h1>
+  
+
+    </header>
+    <div class="entry">
+      
+
+        <!-- 添加目录 -->
+	
+		<div id="toc" class="toc-article">
+		<strong class="toc-title">文章目录</strong>
+		<ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#watcher"><span class="toc-number">1.</span> <span class="toc-text">watcher</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#操作监听"><span class="toc-number">2.</span> <span class="toc-text">操作监听</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#未捕获的异常监听"><span class="toc-number">3.</span> <span class="toc-text">未捕获的异常监听</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#连接状态监控"><span class="toc-number">4.</span> <span class="toc-text">连接状态监控</span></a></li></ol>
+		</div>
+	
+
+        <p>CuratorFramework实例提供了注册监听器的方法，我们可以监听zookeeper连接状态的变更，也可以监听客户端每次操作事件，也可以监听watcher被触发。<br><a id="more"></a></p>
+<h1 id="watcher">watcher</h1><p>客户端可以对某个节点设置watcher，以便当节点发生变化时受到相应的事件通知。<br>客户端可以在三个操作中设置watcher，它们分别是<code>checkExists()</code>、<code>getData()</code>、<code>getChildren()</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CuratorListenerTest</span> </span>&#123;</span><br><span class="line">  <span class="keyword">private</span> CuratorFramework curator;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Before</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">before</span><span class="params">()</span></span>&#123;</span><br><span class="line">    String zookeeperConnectionString = <span class="string">"localhost"</span>;</span><br><span class="line">    RetryPolicy retryPolicy = <span class="keyword">new</span> ExponentialBackoffRetry(<span class="number">1000</span>, <span class="number">3</span>);</span><br><span class="line">    curator = CuratorFrameworkFactory.builder()</span><br><span class="line">        .connectString(zookeeperConnectionString)</span><br><span class="line">        .namespace(<span class="string">"mytest"</span>)</span><br><span class="line">        .sessionTimeoutMs(<span class="number">6000</span>)</span><br><span class="line">        .connectionTimeoutMs(<span class="number">15000</span>)</span><br><span class="line">        .retryPolicy(retryPolicy)</span><br><span class="line">        .build();</span><br><span class="line">    curator.start();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="annotation">@Test</span></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">watchTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">    Stat stat = curator.checkExists().usingWatcher((CuratorWatcher) event -&gt; &#123;</span><br><span class="line">      System.out.println(<span class="string">"node is changed:"</span> + event.getType());</span><br><span class="line">    &#125;).forPath(<span class="string">"/test"</span>);</span><br><span class="line">    System.out.println(<span class="string">"stat="</span>+stat);</span><br><span class="line">    CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">    CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">      <span class="keyword">try</span> &#123;</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"创建节点"</span>);</span><br><span class="line">        curator.create().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"修改节点数据"</span>);</span><br><span class="line">        curator.setData().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line">        Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">        System.out.println(<span class="string">"删除节点"</span>);</span><br><span class="line">        curator.delete().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">        e.printStackTrace();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;).whenComplete((aVoid, throwable) -&gt; countDownLatch.countDown());</span><br><span class="line">    countDownLatch.await();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行测试，结果如下：</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">stat=<span class="literal">null</span></span><br><span class="line">创建节点</span><br><span class="line">node <span class="keyword">is</span> changed:NodeCreated</span><br><span class="line">修改节点数据</span><br><span class="line">删除节点</span><br></pre></td></tr></table></figure>
+<p>上面测试用例中，我们在使用<code>checkExists()</code>来检查节点是否存在时设置了watcher，即便节点不存在也可生效。同时我们注意到watcher只触发了一次，也就是说只能收到一次节点变更通知，之后如果节点再发生变更，不会再收到通知，如果想继续收到通知需要重新设置watcher。<code>getData()</code>和<code>getChildren()</code>同样如此，通知都是一次性的，但是<code>getData()</code>和<code>getChildren()</code>不能在尚未创建的节点上设置watcher。</p>
+<p>用watches, 你必须注意连接问题, 如果client连接断开, 你不会收到任何event除非重连。</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="property">@Test</span></span><br><span class="line">public <span class="literal">void</span> watchTest4() throws Exception&#123;</span><br><span class="line">  curator.getCuratorListenable<span class="function"><span class="params">()</span>.<span class="title">addListener</span><span class="params">((client, event) -&gt; &#123;</span><br><span class="line">    <span class="keyword">if</span> (event.getWatchedEvent() != <span class="literal">null</span> &amp;&amp; event.getWatchedEvent().getType() == Watcher.Event.EventType.None) &#123;</span><br><span class="line">      <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(<span class="string">"node changed :"</span> + event.toString());</span><br><span class="line">  &#125;)</span>;</span><br><span class="line">  <span class="title">Stat</span> <span class="title">stat</span> = <span class="title">curator</span>.<span class="title">checkExists</span><span class="params">()</span>.<span class="title">watched</span><span class="params">()</span>.<span class="title">forPath</span><span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">  <span class="title">System</span>.<span class="title">out</span>.<span class="title">println</span><span class="params">(stat)</span>;</span><br><span class="line">  <span class="title">CountDownLatch</span> <span class="title">countDownLatch</span> = <span class="title">new</span> <span class="title">CountDownLatch</span><span class="params">(<span class="number">1</span>)</span>;</span><br><span class="line">  <span class="title">CompletableFuture</span>.<span class="title">runAsync</span><span class="params">(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"创建节点"</span>);</span><br><span class="line">      curator.create().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">2000</span>);</span><br><span class="line">      System.out.println(<span class="string">"删除节点"</span>);</span><br><span class="line">      curator.<span class="keyword">delete</span>().deletingChildrenIfNeeded().forPath(<span class="string">"/test"</span>);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;)</span>.<span class="title">whenComplete</span><span class="params">((aVoid, throwable) -&gt; countDownLatch.countDown())</span>;</span><br><span class="line">  <span class="title">countDownLatch</span>.<span class="title">await</span><span class="params">()</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>如果你设置了<code>CuratorListener</code>，你可以使用<code>watched()</code>来在节点上设置watcher，这样就可以触发通知了。<code>CuratorListener</code>的具体用法参考下面。</p>
+<h1 id="操作监听">操作监听</h1><p>curator可以设置监听器，可以监听一个后台操作完成或者指定的watch被触发。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="annotation">@Test</span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">listenerTest</span><span class="params">()</span> <span class="keyword">throws</span> Exception</span>&#123;</span><br><span class="line">  curator.getCuratorListenable().addListener((client, event) -&gt; &#123;</span><br><span class="line">    <span class="keyword">switch</span> (event.getType()) &#123;</span><br><span class="line">      <span class="keyword">case</span> CREATE:<span class="comment">//创建节点事件</span></span><br><span class="line">        System.out.print(<span class="string">"创建节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> DELETE:<span class="comment">//删除节点事件</span></span><br><span class="line">        System.out.print(<span class="string">"删除节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> EXISTS:<span class="comment">//检查节点事件</span></span><br><span class="line">        System.out.print(<span class="string">"检查节点事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> GET_ACL:<span class="comment">//获取节点访问控制权限事件</span></span><br><span class="line">        System.out.print(<span class="string">"获取节点访问控制权限事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> GET_DATA:<span class="comment">//获取节点数据事件</span></span><br><span class="line">        System.out.print(<span class="string">"获取节点数据事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SET_ACL:<span class="comment">//设置节点访问控制权限</span></span><br><span class="line">        System.out.print(<span class="string">"设置节点访问控制权限事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SET_DATA:<span class="comment">//设置节点数据权限</span></span><br><span class="line">        System.out.print(<span class="string">"设置节点数据事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CHILDREN:<span class="comment">//获取子节点列表事件</span></span><br><span class="line">        System.out.print(<span class="string">"获取子节点列表事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> WATCHED:<span class="comment">//观察事件</span></span><br><span class="line">        System.out.print(<span class="string">"WATCHED事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> SYNC:<span class="comment">//视图同步事件</span></span><br><span class="line">        System.out.print(<span class="string">"SYNC事件："</span>);</span><br><span class="line">        <span class="keyword">break</span>;</span><br><span class="line">      <span class="keyword">case</span> CLOSING:<span class="comment">//关闭事件</span></span><br><span class="line">        System.out.print(<span class="string">"CLOSING事件："</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    System.out.println(event.toString());</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  CountDownLatch countDownLatch = <span class="keyword">new</span> CountDownLatch(<span class="number">1</span>);</span><br><span class="line">  CompletableFuture.runAsync(() -&gt; &#123;</span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"1.创建节点"</span>);</span><br><span class="line">      curator.create().inBackground().forPath(<span class="string">"/test"</span>, <span class="string">"hi"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"2.修改节点数据"</span>);</span><br><span class="line">      curator.setData().inBackground().forPath(<span class="string">"/test"</span>, <span class="string">"hello"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"3.修改节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).inBackground().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"4.同步获取节点权限"</span>);</span><br><span class="line">      List&lt;ACL&gt; aclList2 = curator.getACL().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      System.out.println(aclList2);</span><br><span class="line">      System.out.println(<span class="string">"5.异步获取节点权限"</span>);</span><br><span class="line">      List&lt;ACL&gt; aclList = curator.getACL().inBackground().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      System.out.println(aclList);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"6.添加子节点"</span>);</span><br><span class="line">      curator.create().inBackground().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello2"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"7.修改子节点数据"</span>);</span><br><span class="line">      curator.setData().inBackground().forPath(<span class="string">"/test/test1"</span>, <span class="string">"hello3"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"8.修改子节点权限"</span>);</span><br><span class="line">      curator.setACL().withACL(ZooDefs.Ids.OPEN_ACL_UNSAFE).inBackground().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"9.添加子节点"</span>);</span><br><span class="line">      curator.create().inBackground().forPath(<span class="string">"/test/test2"</span>, <span class="string">"hello4"</span>.getBytes());</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"10.检查子节点"</span>);</span><br><span class="line">      Stat stat = curator.checkExists().watched().inBackground().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      System.out.println(<span class="string">"stat="</span> + stat);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"11.获取节点列表"</span>);</span><br><span class="line">      List&lt;String&gt; children = curator.getChildren().inBackground().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      System.out.println(children);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"12.删除子节点"</span>);</span><br><span class="line">      curator.delete().inBackground().forPath(<span class="string">"/test/test1"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"13.同步节点数据"</span>);</span><br><span class="line">      curator.sync().inBackground().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      Thread.sleep(<span class="number">1000</span>);</span><br><span class="line">      System.out.println(<span class="string">"14.删除节点"</span>);</span><br><span class="line">      curator.delete().deletingChildrenIfNeeded().inBackground().forPath(<span class="string">"/test"</span>);</span><br><span class="line">      System.out.println(<span class="string">"15.完成"</span>);</span><br><span class="line">      curator.close();</span><br><span class="line">    &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">      e.printStackTrace();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;).whenComplete((aVoid, throwable) -&gt; countDownLatch.countDown());</span><br><span class="line">  countDownLatch.await();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行上面测试，输出如下：</p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">WATCHED事件：CuratorEventImpl&#123;<span class="variable">type=</span>WATCHED, <span class="variable">resultCode=</span><span class="number">3</span>, <span class="variable">path=</span>'<span class="constant">null</span>', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span>WatchedEvent state:SyncConnected type:None path:<span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">1</span>.创建节点</span><br><span class="line">创建节点事件：CuratorEventImpl&#123;<span class="variable">type=</span>CREATE, <span class="variable">resultCode=</span>-<span class="number">110</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">2</span>.修改节点数据</span><br><span class="line">设置节点数据事件：CuratorEventImpl&#123;<span class="variable">type=</span>SET_DATA, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9899</span>,<span class="number">9944</span>,<span class="number">1441526522709</span>,<span class="number">1441527274426</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">4</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9939</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">3</span>.修改节点权限</span><br><span class="line">设置节点访问控制权限事件：CuratorEventImpl&#123;<span class="variable">type=</span>SET_ACL, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9899</span>,<span class="number">9944</span>,<span class="number">1441526522709</span>,<span class="number">1441527274426</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9939</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">4</span>.同步获取节点权限</span><br><span class="line">[<span class="number">31</span>,s&#123;'world,'anyone&#125;</span><br><span class="line">]</span><br><span class="line"><span class="number">5</span>.异步获取节点权限</span><br><span class="line"><span class="constant">null</span></span><br><span class="line">获取节点访问控制权限事件：CuratorEventImpl&#123;<span class="variable">type=</span>GET_ACL, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9899</span>,<span class="number">9944</span>,<span class="number">1441526522709</span>,<span class="number">1441527274426</span>,<span class="number">5</span>,<span class="number">9</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">1</span>,<span class="number">9939</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span>[<span class="number">31</span>,s&#123;'world,'anyone&#125;</span><br><span class="line">]&#125;</span><br><span class="line"><span class="number">6</span>.添加子节点</span><br><span class="line">创建节点事件：CuratorEventImpl&#123;<span class="variable">type=</span>CREATE, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'/test/test1', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">7</span>.修改子节点数据</span><br><span class="line">设置节点数据事件：CuratorEventImpl&#123;<span class="variable">type=</span>SET_DATA, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9946</span>,<span class="number">9947</span>,<span class="number">1441527277458</span>,<span class="number">1441527278461</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9946</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">8</span>.修改子节点权限</span><br><span class="line">设置节点访问控制权限事件：CuratorEventImpl&#123;<span class="variable">type=</span>SET_ACL, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9946</span>,<span class="number">9947</span>,<span class="number">1441527277458</span>,<span class="number">1441527278461</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9946</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">9</span>.添加子节点</span><br><span class="line">创建节点事件：CuratorEventImpl&#123;<span class="variable">type=</span>CREATE, <span class="variable">resultCode=</span>-<span class="number">110</span>, <span class="variable">path=</span>'/test/test2', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">10</span>.检查子节点</span><br><span class="line"><span class="variable">stat=</span><span class="constant">null</span></span><br><span class="line">检查节点事件：CuratorEventImpl&#123;<span class="variable">type=</span>EXISTS, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9946</span>,<span class="number">9947</span>,<span class="number">1441527277458</span>,<span class="number">1441527278461</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">6</span>,<span class="number">0</span>,<span class="number">9946</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">11</span>.获取节点列表</span><br><span class="line"><span class="constant">null</span></span><br><span class="line">获取子节点列表事件：CuratorEventImpl&#123;<span class="variable">type=</span>CHILDREN, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span>[test1, test2], <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="number">9899</span>,<span class="number">9944</span>,<span class="number">1441526522709</span>,<span class="number">1441527274426</span>,<span class="number">5</span>,<span class="number">10</span>,<span class="number">5</span>,<span class="number">0</span>,<span class="number">5</span>,<span class="number">2</span>,<span class="number">9946</span></span><br><span class="line">, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">12</span>.删除子节点</span><br><span class="line">WATCHED事件：CuratorEventImpl&#123;<span class="variable">type=</span>WATCHED, <span class="variable">resultCode=</span><span class="number">3</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span>WatchedEvent state:SyncConnected type:NodeDeleted path:/test/test1, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line">删除节点事件：CuratorEventImpl&#123;<span class="variable">type=</span>DELETE, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test/test1', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">13</span>.同步节点数据</span><br><span class="line">SYNC事件：CuratorEventImpl&#123;<span class="variable">type=</span>SYNC, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'/test', <span class="variable">name=</span>'/mytest/test', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br><span class="line"><span class="number">14</span>.删除节点</span><br><span class="line"><span class="number">15</span>.完成</span><br><span class="line">CLOSING事件：CuratorEventImpl&#123;<span class="variable">type=</span>CLOSING, <span class="variable">resultCode=</span><span class="number">0</span>, <span class="variable">path=</span>'<span class="constant">null</span>', <span class="variable">name=</span>'<span class="constant">null</span>', <span class="variable">children=</span><span class="constant">null</span>, <span class="variable">context=</span><span class="constant">null</span>, <span class="variable">stat=</span><span class="constant">null</span>, <span class="variable">data=</span><span class="constant">null</span>, <span class="variable">watchedEvent=</span><span class="constant">null</span>, <span class="variable">aclList=</span><span class="constant">null</span>&#125;</span><br></pre></td></tr></table></figure>
+<p>从上面输出我们可以看出：</p>
+<p>1、首先就输出了WATCHED事件，这是因为CuratorFrameworkImpl实例化时会注册一个默认的watcher，zookeeper在建立连接后发送一个默认的<code>watchedEvent=WatchedEvent state:SyncConnected type:None</code>事件，这是一个WATCHED事件，它的类型为<code>EventType.NONE</code>。</p>
+<p>2、每步操作都是以<code>inBackground()</code>模式执行的，只有这样才能触发监听器。</p>
+<h1 id="未捕获的异常监听">未捕获的异常监听</h1><figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="property">@Test</span></span><br><span class="line">public <span class="literal">void</span> unhandledErrorListenerTest() throws Exception &#123;</span><br><span class="line">  curator.getCuratorListenable<span class="function"><span class="params">()</span>.<span class="title">addListener</span><span class="params">((client, event) -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="number">10</span>/<span class="number">0</span>);</span><br><span class="line">  &#125;)</span>;</span><br><span class="line">  <span class="title">curator</span>.<span class="title">getUnhandledErrorListenable</span><span class="params">()</span>.<span class="title">addListener</span><span class="params">((message, e) -&gt; &#123;</span><br><span class="line">    System.out.println(<span class="string">"发生异常"</span>);</span><br><span class="line">    e.printStackTrace();</span><br><span class="line">  &#125;)</span>;</span><br><span class="line">  <span class="title">curator</span>.<span class="title">checkExists</span><span class="params">()</span>.<span class="title">watched</span><span class="params">()</span>.<span class="title">forPath</span><span class="params">(<span class="string">"/test"</span>)</span>;</span><br><span class="line">&#125;</span></span><br></pre></td></tr></table></figure>
+<p>我们可以通过<code>getUnhandledErrorListenable()</code>来添加未捕获的异常监听器。</p>
+<h1 id="连接状态监控">连接状态监控</h1><p>Curator对ZooKeeper的事件Watcher进行了封装处理, 然后实现了一套监听机制. 提供了几个监听接口用来处理ZooKeeper连接状态的变化<br>当连接出现异常, 将通过ConnectionStateListener接口进行监听, 并进行相应的处理。</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">curator.getConnectionStateListenable<span class="function"><span class="params">()</span>.<span class="title">addListener</span><span class="params">((client, state) -&gt; &#123;</span><br><span class="line">      <span class="keyword">switch</span> (state) &#123;</span><br><span class="line">        <span class="keyword">case</span> CONNECTED:</span><br><span class="line">          System.out.println(<span class="string">"连接建立"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> LOST:</span><br><span class="line">          System.out.println(<span class="string">"连接丢失"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> RECONNECTED:</span><br><span class="line">          System.out.println(<span class="string">"连接重连"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> SUSPENDED:</span><br><span class="line">          System.out.println(<span class="string">"连接暂停"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">        <span class="keyword">case</span> READ_ONLY:</span><br><span class="line">          System.out.println(<span class="string">"连接只读"</span>);</span><br><span class="line">          <span class="keyword">break</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span>;</span></span><br></pre></td></tr></table></figure>
+<p>暂停(SUSPENDED): 当连接丢失, 将暂停所有操作, 直到连接重新建立, 如果在规定时间内无法建立连接, 将触发LOST通知</p>
+<p>重连(RECONNECTED): 连接丢失, 执行重连时, 将触发该通知</p>
+<p>丢失(LOST): 连接超时时, 将触发该通知</p>
+<p>其他不多做解释了。</p>
+
+      
+    </div>
+    <footer>
+      
+        
+  
+  <div class="categories">
+    <a href="/categories/zookeeper/">zookeeper</a>
+  </div>
+
+        
+  
+  <div class="tags">
+    <a href="/tags/curator/">curator</a>, <a href="/tags/zookeeper/">zookeeper</a>
+  </div>
+
+<!-- Baidu Button BEGIN -->
+<div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare">
+<a class="bds_qzone"></a>
+<a class="bds_tsina"></a>
+<a class="bds_tqq"></a>
+<a class="bds_renren"></a>
+<a class="bds_t163"></a>
+<span class="bds_more"></span>
+<a class="shareCount"></a>
+</div>
+<script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=3326447" ></script>
+<script type="text/javascript" id="bdshell_js"></script>
+<script type="text/javascript">
+document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)
+</script>
+<!-- Baidu Button END -->      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+ <nav id="pagination" >
+    
+    <a href="/2015/09/07/zookeeper客户端框架Curator分布式计数器/" class="alignleft prev" >上一页</a>
+    
+    
+    <a href="/2015/08/25/zookeeper客户端框架Curator缓存使用/" class="alignright next" >下一页</a>
+    
+    <div class="clearfix"></div>
+</nav>
+
+
+
+<section id="comment">
+
+<!-- Duoshuo Comment BEGIN -->
+	<div class="ds-thread"></div>
+<script type="text/javascript">
+var duoshuoQuery = {short_name:"sdyy321"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+<!-- Duoshuo Comment END -->  
+
+  
+</section>
+
+
+</div></div>
+    <aside id="sidebar" class="alignright">
+  <div class="search">
+  <form action="//google.com/search" method="get" accept-charset="utf-8">
+    <input type="search" name="q" results="0" placeholder="搜索">
+    <input type="hidden" name="q" value="site:yoursite.com">
+  </form>
+</div>
+
+  
+<div class="widget tag">
+  <h3 class="title">分类</h3>
+  <ul class="entry">
+  
+    <li><a href="/categories/hexo/">hexo</a><small>3</small></li>
+  
+    <li><a href="/categories/java/">java</a><small>3</small></li>
+  
+    <li><a href="/categories/java/metrics/">metrics</a><small>1</small></li>
+  
+    <li><a href="/categories/zookeeper/">zookeeper</a><small>9</small></li>
+  
+    <li><a href="/categories/java/作业调度/">作业调度</a><small>2</small></li>
+  
+  </ul>
+</div>
+
+
+  
+<div class="widget tagcloud">
+  <h3 class="title">标签云</h3>
+  <div class="entry">
+    <a href="/tags/cluster/" style="font-size: 10px;">cluster</a> <a href="/tags/curator/" style="font-size: 20px;">curator</a> <a href="/tags/hexo/" style="font-size: 16.67px;">hexo</a> <a href="/tags/job/" style="font-size: 13.33px;">job</a> <a href="/tags/jobStore/" style="font-size: 10px;">jobStore</a> <a href="/tags/listener/" style="font-size: 10px;">listener</a> <a href="/tags/scheduler/" style="font-size: 13.33px;">scheduler</a> <a href="/tags/timer/" style="font-size: 10px;">timer</a> <a href="/tags/trigger/" style="font-size: 10px;">trigger</a> <a href="/tags/zookeeper/" style="font-size: 20px;">zookeeper</a> <a href="/tags/度量工具/" style="font-size: 10px;">度量工具</a> <a href="/tags/指标/" style="font-size: 10px;">指标</a>
+  </div>
+</div>
+
+
+  <div class="widget tag">
+<h3 class="title">简介</h3>
+<ul class="entry">
+<li><img width="100%" height="100%" src="http://7xjy9q.com1.z0.glb.clouddn.com/af23593e8c86e6630a70727ec0f2f303.jpg" /></li>
+<li>二次元：poplar | 清风抚白杨</li>
+<li>曾任职：<a href="http://www.shopex.cn/">Shopex</a></li>
+<li>现任职：<a href="http://www.ilegendsoft.com/">iLegendsoft</a></li>
+<li>职业：软件开发工程师(java方向)</li>
+<li>痴迷过的游戏：WOW，DOTA，刀塔传奇</li>
+<li>email：sd1987917@163.com</li>
+<li>qq：515895616</li>
+<li>怨念or愿望：
+  <ul class="entry">
+    <li>工作稳定：1/1</li>
+    <li>满意的薪水：0.5/1</li>
+    <li>一个温柔贤惠的妻子：0.8/1</li>
+    <li>爱情结晶：0/1</li>
+    <li>狗狗：0/1</li>
+    <li>出版自己的书籍：0/1</li>
+    <li>老神在在，指点江山：0.01/1</li>
+  </ul>
+</li>
+</ul>
+</div>
+
+
+</aside>
+    <div class="clearfix"></div>
+  </div>
+  <footer id="footer" class="inner"><script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+<section>
+本站总访问量<span id="busuanzi_value_site_pv"></span>次，本站访客数<span id="busuanzi_value_site_uv"></span>人次，本文总阅读量<span id="busuanzi_value_page_pv"></span>次
+</section>
+<div class="clearfix"></div>
+</footer>
+  <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
+<script src="/js/jquery.imagesloaded.min.js"></script>
+<script src="/js/gallery.js"></script>
+
+
+
+
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css" media="screen" type="text/css">
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+<script type="text/javascript">
+(function($){
+  $('.fancybox').fancybox();
+})(jQuery);
+</script>
+
+
+<!-- mathjax config similar to math.stackexchange -->
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+</body>
+</html>
+
+
+
+<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/121cd7cbdc3e4855075ea8b558508b91ac463ac2/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f677265656e5f3030373230302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_green_007200.png"></a>
+
+<!--<a href="https://github.com/sdyy321" target="_blank"><img style="position: absolute; top: 0; left: 0; border: 0;" src="/img/forkme_left_green_007200.png" alt="Fork me on GitHub"></a>-->
